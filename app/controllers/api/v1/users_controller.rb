@@ -1,4 +1,4 @@
-  class Api::V1::UsersController < Api::ApiController
+class Api::V1::UsersController < Api::ApiController
   skip_before_filter :authenticate, only: [:register]
 
   # todo
@@ -35,8 +35,17 @@
   end
 
   def get_user
-    @current_user ||= User.find_by_api_key(params[:access_token])
-    render json: @current_user.to_json
+    response = {}
+    user = User.select(:id, :name, :email, :phone, :city).where(api_key: params[:access_token])
+    # todo add error messages as needed
+
+    if user.present?
+      response = get_v1_formatted_response({user: user}, true, [])
+    else
+      response = get_v1_formatted_response({}, false, ["user not found"])
+    end
+
+    render json: response.to_json
   end
 
 

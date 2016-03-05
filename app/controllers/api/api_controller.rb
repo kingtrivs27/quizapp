@@ -45,6 +45,15 @@ class Api::ApiController < ApplicationController
     request.format = :json
   end
 
+  def get_v1_formatted_response(data, is_successful = false, errors = [])
+    {
+      success: is_successful,
+      errors: [] + errors,
+      data: {}.merge(data),
+      version: "1.0.0"
+    }
+  end
+
   # def update_user_apk_version
   #   apk_version = request.headers['Apk-Version'].to_i
   #   return if @current_user.blank? || @current_user.apk_version == apk_version
