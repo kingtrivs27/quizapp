@@ -2,7 +2,10 @@ class Api::ApiController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
   # before_action :return_error
-  before_action :authenticate
+
+  # todo enable authentication
+  # before_action :authenticate
+
   before_action :set_default_response_format
   # before_action :update_user_apk_version
   # before_action :verify_blocked_user

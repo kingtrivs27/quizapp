@@ -16,6 +16,8 @@
 class User < ActiveRecord::Base
   before_create :set_api_key
 
+  has_many :devices
+
 
     private
     def set_api_key
