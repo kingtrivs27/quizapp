@@ -10,7 +10,8 @@ module Api::V1::NotificationsHelper
       :data => final_data_to_send
     }
 
-    gcm.send(registration_ids, options)
+    gcm_response = gcm.send(registration_ids, options)
+    gcm_response
   end
 
   def get_receiver_gcm_ids
