@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
 
-  match '/register_user' => 'api/v1/users#register', :via => 'post'
-  match '/get_user' => 'api/v1/users#get_user', :via => 'post'
+  match '/v1/register_user' => 'api/v1/users#register', :via => 'post'
+  match '/v1/get_user' => 'api/v1/users#get_user', :via => 'post'
 
-  match '/get_subjects' => 'api/v1/subjects#get_subjects', :via => 'post'
+  match '/v1/get_subjects' => 'api/v1/subjects#get_subjects', :via => 'post'
+
+  match '/v1/update_device_info' => 'api/v1/users#update_device_info', :via => 'post'
+
+  match '/v1/notification_test' => 'api/v1/notifications#test_notify', :via => 'post'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

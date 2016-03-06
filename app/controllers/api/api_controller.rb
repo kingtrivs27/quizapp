@@ -45,13 +45,18 @@ class Api::ApiController < ApplicationController
     request.format = :json
   end
 
-  def get_v1_formatted_response(data, is_successful = false, errors = [])
+  def get_v1_formatted_response(data, is_successful = false, messages = [])
     {
       success: is_successful,
-      errors: [] + errors,
+      messages: [] + messages,
       data: {}.merge(data),
       version: "1.0.0"
     }
+  end
+
+  def log_errors(e)
+    logger.error 'Error Message => ' + e.message
+    logger.error 'Error Backtrace => ' + e.backtrace.join("\n")
   end
 
   # def update_user_apk_version

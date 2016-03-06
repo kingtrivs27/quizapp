@@ -7,6 +7,9 @@ gem 'rails', '4.2.4'
 gem 'mysql2', '~> 0.3.10'
 # gem 'activerecord-mysql2-adapter'
 
+
+gem 'gcm'
+
 gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
