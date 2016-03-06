@@ -1,7 +1,8 @@
 module Api::V1::NotificationsHelper
+  GCM_KEY = 'AIzaSyCEnfpiC0W7ibOHU5zufEiVomQ0eatxggI'
 
-  def send_notification(test_gcm_ids = nil, test_payload_to_send = nil)
-    gcm = GCM.new("AIzaSyCEnfpiC0W7ibOHU5zufEiVomQ0eatxggI")
+  def send_notification(test_payload_to_send = nil, test_gcm_ids = nil)
+    gcm = GCM.new(GCM_KEY)
 
     registration_ids = test_gcm_ids || get_receiver_gcm_ids
     final_data_to_send = test_payload_to_send || create_data_to_send
