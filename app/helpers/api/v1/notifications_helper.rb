@@ -12,6 +12,7 @@ module Api::V1::NotificationsHelper
     }
 
     gcm_response = gcm.send(registration_ids, options)
+    p gcm_response
     gcm_response
   end
 
