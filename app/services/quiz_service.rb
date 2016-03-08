@@ -77,7 +77,6 @@ class QuizService < BaseService
         question_id: question.id,
         description: question.description,
         type: 'radio',
-        corect_option_id: all_answers_by_question_ids[question.id],
         options: options,
         correct_option_id: correct_option_id
       }

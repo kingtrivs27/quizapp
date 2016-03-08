@@ -11,6 +11,7 @@
 #  api_version :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  image_url   :string(255)
 #
 
 class User < ActiveRecord::Base

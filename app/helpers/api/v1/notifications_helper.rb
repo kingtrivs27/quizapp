@@ -1,5 +1,6 @@
 module Api::V1::NotificationsHelper
   GCM_KEY = 'AIzaSyCEnfpiC0W7ibOHU5zufEiVomQ0eatxggI'
+
   # todo remove this in prod
   require 'openssl'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
