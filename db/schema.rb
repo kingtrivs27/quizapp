@@ -41,14 +41,17 @@ ActiveRecord::Schema.define(version: 20160308191128) do
   end
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer  "requestor_id",    limit: 4,                null: false
-    t.integer  "opponent_id",     limit: 4,                null: false
-    t.integer  "requestor_score", limit: 4,   default: 0
-    t.integer  "opponent_score",  limit: 4,   default: 0
-    t.string   "opponent_type",   limit: 255, default: ""
-    t.string   "status",          limit: 25
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.integer  "subject_id",          limit: 4,                  null: false
+    t.integer  "requester_id",        limit: 4,                  null: false
+    t.integer  "opponent_id",         limit: 4,                  null: false
+    t.integer  "requester_score",     limit: 4,   default: 0
+    t.integer  "opponent_score",      limit: 4,   default: 0
+    t.boolean  "requester_available",             default: true
+    t.boolean  "opponent_available",              default: true
+    t.string   "opponent_type",       limit: 255, default: ""
+    t.string   "status",              limit: 25
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   create_table "subjects", force: :cascade do |t|
