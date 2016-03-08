@@ -12,10 +12,12 @@ class CreateQuizzes < ActiveRecord::Migration
       t.boolean :opponent_available, :default => true
 
       # needed when opponent is a bot
-      t.string :opponent_type, :default => ''
+      # user => 0, bot => 1
+      t.integer :opponent_type, default: 0
 
-      # pending, started, finished
-      t.string :status,  :limit => 25
+      # pending => 0, started => 1, finished => 3
+      t.integer :status, default: 0
+      t.text :info, null: true
 
       t.timestamps null: false
     end

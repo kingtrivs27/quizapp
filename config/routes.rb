@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   match '/v1/notification_test' => 'api/v1/notifications#test_notify', :via => 'post'
 
+  match '/v1/quiz_request' => 'api/v1/quizes#quiz_request', :via => 'post'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
