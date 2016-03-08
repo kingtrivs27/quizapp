@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305190426) do
+ActiveRecord::Schema.define(version: 20160308191128) do
+
+  create_table "answer_options", force: :cascade do |t|
+    t.integer  "question_id", limit: 4,                     null: false
+    t.text     "description", limit: 65535,                 null: false
+    t.boolean  "is_correct",                default: false, null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+  end
 
   create_table "devices", force: :cascade do |t|
     t.integer  "user_id",        limit: 4
@@ -24,6 +32,24 @@ ActiveRecord::Schema.define(version: 20160305190426) do
   end
 
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "subject_id",  limit: 4,     null: false
+    t.text     "description", limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer  "requestor_id",    limit: 4,                null: false
+    t.integer  "opponent_id",     limit: 4,                null: false
+    t.integer  "requestor_score", limit: 4,   default: 0
+    t.integer  "opponent_score",  limit: 4,   default: 0
+    t.string   "opponent_type",   limit: 255, default: ""
+    t.string   "status",          limit: 25
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+  end
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
