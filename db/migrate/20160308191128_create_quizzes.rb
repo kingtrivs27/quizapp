@@ -3,7 +3,7 @@ class CreateQuizzes < ActiveRecord::Migration
     create_table :quizzes do |t|
       t.integer :subject_id, :null => false
       t.integer :requester_id, :null => false
-      t.integer :opponent_id, :null => false
+      t.integer :opponent_id, :null => true
 
       t.integer :requester_score, :default => 0
       t.integer :opponent_score, :default => 0

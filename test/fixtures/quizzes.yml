@@ -5,7 +5,7 @@
 #  id                  :integer          not null, primary key
 #  subject_id          :integer          not null
 #  requester_id        :integer          not null
-#  opponent_id         :integer          not null
+#  opponent_id         :integer
 #  requester_score     :integer          default(0)
 #  opponent_score      :integer          default(0)
 #  requester_available :boolean          default(TRUE)
