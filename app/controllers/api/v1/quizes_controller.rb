@@ -87,10 +87,10 @@ class Api::V1::QuizesController < Api::ApiController
     available_user_ids = quiz.get_available_user_ids
 
     gcm_device_ids = []
-    gcm_device_ids = User.select(:id, :user_device)
-                        .includes(:devices)
-                        .where('user.id = available_user_ids')
-                        .collect(&:user_device) if available_user_ids.present?
+    devices = Device.select(:user_device_id).where(user_id: [1,3])
+    devices.each do |device|
+      gcm_device_ids << device.user_device_id if device.user_device_id.present?
+    end
 
     if gcm_device_ids.present?
       payload = quiz.get_next_question_gcm_payload
