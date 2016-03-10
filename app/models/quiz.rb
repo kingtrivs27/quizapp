@@ -34,20 +34,21 @@ class Quiz < ActiveRecord::Base
     quiz_attrs_to_update = {}
 
     answer_option = AnswerOption.find_by(id: option_id)
-    if answer_option.question_id == question_id && answer_option.is_correct?
-      quiz_attrs_to_update.merge(new_user_score)
+    if answer_option.question_id == question_id.to_i && answer_option.is_correct?
+      quiz_attrs_to_update.merge!(new_user_score(params))
     end
 
-    quiz_attrs_to_update.merge(new_bot_score(params))
+    quiz_attrs_to_update.merge!(new_bot_score(params))
 
     send_gcm = send_gcm_push_to_users?(params)
 
     if send_gcm
-      quiz_attrs_to_update.merge(mark_users_as_not_waiting)
+      quiz_attrs_to_update.merge!(mark_users_as_not_waiting)
     else
-      quiz_attrs_to_update.merge(mark_user_as_waiting)
+      quiz_attrs_to_update.merge!(mark_user_as_waiting(params))
     end
 
+    binding.pry
     # update quiz attributes in one shot
     update_attributes(quiz_attrs_to_update)
 
@@ -57,14 +58,14 @@ class Quiz < ActiveRecord::Base
   def handle_answer_timeout(params)
     quiz_attrs_to_update = {}
 
-    quiz_attrs_to_update.merge(new_bot_score(params))
+    quiz_attrs_to_update.merge!(new_bot_score(params))
     send_gcm = send_gcm_push_to_users?(params)
 
     if send_gcm
-      quiz_attrs_to_update.merge(mark_users_as_not_waiting)
-      quiz_attrs_to_update.merge(update_last_question_answered_by_users(params))
+      quiz_attrs_to_update.merge!(mark_users_as_not_waiting)
+      quiz_attrs_to_update.merge!(update_last_question_answered_by_users(params))
     else
-      quiz_attrs_to_update.merge(mark_user_as_waiting)
+      quiz_attrs_to_update.merge!(mark_user_as_waiting(params))
     end
 
     # update quiz attributes in one shot
@@ -76,7 +77,7 @@ class Quiz < ActiveRecord::Base
   def handle_user_quit(params)
     quiz_attrs_to_update = {}
 
-    quiz_attrs_to_update.merge(mark_current_user_as_not_available)
+    quiz_attrs_to_update.merge!(mark_current_user_as_not_available(params))
 
     # update quiz attributes in one shot
     update_attributes(quiz_attrs_to_update)
@@ -85,23 +86,26 @@ class Quiz < ActiveRecord::Base
     false
   end
 
-  def new_user_score
-
+  def new_user_score(params)
+    attr_update = {}
     # update requester score
-    {requestor_score: requester_score + POINTS_FOR_CORRECT_ANSWER} if is_requester_call?
+    attr_update = {requester_score: requester_score + POINTS_FOR_CORRECT_ANSWER} if is_requester_call?(params)
     # update opponent score
-    {opponent_score: opponent_score + POINTS_FOR_CORRECT_ANSWER} if is_opponent_call?
+    attr_update = {opponent_score: opponent_score + POINTS_FOR_CORRECT_ANSWER} if is_opponent_call?(params)
+    attr_update
   end
 
-  def mark_current_user_as_not_available
-    {requester_available: false} if is_requester_call?
-    {opponent_available: false} if is_opponent_call?
+  def mark_current_user_as_not_available(params)
+    attr_update = {}
+    attr_update = {requester_available: false} if is_requester_call?(params)
+    attr_update = {opponent_available: false} if is_opponent_call?(params)
+    attr_update
   end
 
   def new_bot_score(params)
     # update opponent score in case of bot_mode
     # todo use enum
-    {opponent_score: params[:bot_score]} if is_opponent_bot?
+    is_opponent_bot? ? {opponent_score: params[:bot_score]} : {}
   end
 
   def update_last_question_answered_by_users(params)
@@ -112,17 +116,20 @@ class Quiz < ActiveRecord::Base
     waiting = false
 
     # check if another person is waiting
-    waiting = true if is_opponent_call? && (requester_waiting || !requester_available)
-    waiting = true if is_requester_call? && (is_opponent_bot? || opponent_waiting || !opponent_available)
+    waiting = true if is_opponent_call?(params) && (requester_waiting || !requester_available)
+    waiting = true if is_requester_call?(params) && (is_opponent_bot? || opponent_waiting || !opponent_available)
 
-    notification_already_sent = (params[:question_id] == last_question_answered)
+    notification_already_sent = (params[:question_id].to_i == last_question_answered)
 
     waiting && !notification_already_sent
   end
 
-  def mark_user_as_waiting
-    {requester_waiting: true} if is_requester_call?
-    {opponent_waiting: true} if is_opponent_call?
+  def mark_user_as_waiting(params)
+    attr_update = {}
+    attr_update = {requester_waiting: true} if is_requester_call?(params)
+    attr_update = {opponent_waiting: true} if is_opponent_call?(params)
+
+    attr_update
   end
 
   def mark_users_as_not_waiting
@@ -134,12 +141,12 @@ class Quiz < ActiveRecord::Base
     end
   end
 
-  def is_requester_call?
-    requestor_id == @current_user.id
+  def is_requester_call?(params)
+    requester_id == params[:current_user_id]
   end
 
-  def is_opponent_call?
-    opponent_id == @current_user.id
+  def is_opponent_call?(params)
+    opponent_id == params[:current_user_id]
   end
 
   def is_opponent_bot?
@@ -154,12 +161,12 @@ class Quiz < ActiveRecord::Base
     available_user_ids
   end
 
-  def get_next_question_gcm_payload
+  def get_next_question_gcm_payload(params)
     {
       show_next: true,
       scores: {
-        yours: is_requester_call? ? requester_score : opponent_score,
-        opponent: is_opponent_call? ? opponent_score : requester_score
+        yours: is_requester_call?(params) ? requester_score : opponent_score,
+        opponent: is_opponent_call?(params) ? opponent_score : requester_score
       }
     }
   end

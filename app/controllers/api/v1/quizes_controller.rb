@@ -51,6 +51,8 @@ class Api::V1::QuizesController < Api::ApiController
 
   def submit_answer
     @current_user = User.find_by(api_key: params[:access_token])
+    params[:current_user_id] = @current_user.id
+
     answer_flag = params[:flag]
     send_gcm = false
     quiz = Quiz.find_by(id: params[:quiz_id])
@@ -68,7 +70,7 @@ class Api::V1::QuizesController < Api::ApiController
     end
 
     # todo check if quiz reload is needed
-    send_notification_for_next_question(quiz) if send_gcm
+    send_notification_for_next_question(quiz, params) if send_gcm
 
     render json: get_v1_formatted_response({}, true, ['success']).to_json and return
 
@@ -83,7 +85,7 @@ class Api::V1::QuizesController < Api::ApiController
   end
 
 
-  def send_notification_for_next_question(quiz)
+  def send_notification_for_next_question(quiz, params)
     available_user_ids = quiz.get_available_user_ids
 
     gcm_device_ids = []
@@ -91,9 +93,9 @@ class Api::V1::QuizesController < Api::ApiController
     devices.each do |device|
       gcm_device_ids << device.user_device_id if device.user_device_id.present?
     end
-
+    binding.pry
     if gcm_device_ids.present?
-      payload = quiz.get_next_question_gcm_payload
+      payload = quiz.get_next_question_gcm_payload(params)
 
       send_notification(payload, gcm_device_ids)
     end
