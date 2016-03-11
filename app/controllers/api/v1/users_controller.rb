@@ -52,7 +52,7 @@ class Api::V1::UsersController < Api::ApiController
     update_message = 'successfully updated'
 
     # get the user and device
-    user = User.find_by(api_key: params[:access_token])
+    user = @current_user
     device = user.devices.where(user_device_id: params[:device_info][:device_id]).first if user.present?
 
     if device.present?
