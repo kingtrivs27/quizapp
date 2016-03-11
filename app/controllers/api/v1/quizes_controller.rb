@@ -29,7 +29,14 @@ class Api::V1::QuizesController < Api::ApiController
           }
 
           gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
+          puts "##########################################"
+          puts gcm_response
+          puts "##########################################"
+
           gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device_id))
+          puts "##########################################"
+          puts gcm_response
+          puts "##########################################"
 
         end
       else
