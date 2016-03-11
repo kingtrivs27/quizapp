@@ -4,6 +4,7 @@ class Api::V1::QuizesController < Api::ApiController
   def quiz_request
     requested_subject_id = params[:subject_id]
     current_user = User.find_by(api_key: params[:access_token])
+    quiz_response = {}
 
     ActiveRecord::Base.transaction do
       # TODO::Avoid race condition in future for this request
