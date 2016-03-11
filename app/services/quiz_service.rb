@@ -49,7 +49,8 @@ class QuizService < BaseService
     }
 
     begin
-      quiz_id = Quiz.create!(create_quiz_params)
+      quiz_obj = Quiz.create!(create_quiz_params)
+      quiz_id = quiz_obj.id
       quiz_data = get_quiz_response(selected_questions, selected_question_ids)
       quiz_data.merge!(quiz_id: quiz_id)
 
