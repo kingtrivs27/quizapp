@@ -18,8 +18,8 @@ class Api::V1::QuizesController < Api::ApiController
 
           first_user_payload = {
             type: 'QUIZ_START',
-            name: current_user.name ,
-            facebook_id: current_user.facebook_id
+            name: 'Bot' ,
+            facebook_id: 0
           }
 
           gcm_response = send_notification(first_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_key))
