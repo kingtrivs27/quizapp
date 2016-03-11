@@ -46,6 +46,7 @@ class Api::ApiController < ApplicationController
   end
 
   def get_v1_formatted_response(data, is_successful = false, messages = [])
+    data = {} if data.nil?
     {
       success: is_successful,
       messages: [] + messages,
