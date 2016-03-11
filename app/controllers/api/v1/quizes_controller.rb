@@ -116,7 +116,7 @@ class Api::V1::QuizesController < Api::ApiController
     available_user_ids = quiz.get_available_user_ids
 
     gcm_device_ids = []
-    devices = Device.select(:user_device_id).where(user_id: available_user_ids)
+    devices = Device.where(user_id: available_user_ids)
     devices.each do |device|
       gcm_device_ids << device.google_api_key if device.google_api_key.present?
     end
