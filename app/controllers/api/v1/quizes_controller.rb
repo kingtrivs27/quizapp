@@ -28,8 +28,8 @@ class Api::V1::QuizesController < Api::ApiController
             image_url: first_user.image_url}
           }
 
-          gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device))
-          gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device))
+          gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
+          gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device_id))
 
         end
       else
