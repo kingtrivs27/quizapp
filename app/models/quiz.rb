@@ -155,7 +155,7 @@ class Quiz < ActiveRecord::Base
 
   def get_available_user_ids
     available_user_ids = []
-    available_user_ids << opponent_id if opponent_available
+    available_user_ids << opponent_id if opponent_available && !is_opponent_bot?
     available_user_ids << requester_id if requester_available
 
     available_user_ids

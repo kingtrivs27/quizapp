@@ -17,7 +17,7 @@ class Api::V1::QuizesController < Api::ApiController
           pending_request.update_attributes({opponent_type: 1, status: 1, opponent_id: 0, requester_waiting: false })
 
           first_user_payload = {
-            type: 'START_QUIZ',
+            type: 'QUIZ_START',
             name: current_user.name ,
             facebook_id: current_user.facebook_id
           }
@@ -31,14 +31,14 @@ class Api::V1::QuizesController < Api::ApiController
           if quiz_response[:success]
             # send notification to both users
             first_user_payload = {
-              type: 'START_QUIZ',
+              type: 'QUIZ_START',
               name: current_user.name ,
               facebook_id: current_user.facebook_id
             }
 
             first_user = User.find_by(id: pending_request.requester_id)
             second_user_payload = {
-              type: 'START_QUIZ',
+              type: 'QUIZ_START',
               name: first_user.name,
               facebook_id: first_user.facebook_id
             }
@@ -63,9 +63,9 @@ class Api::V1::QuizesController < Api::ApiController
     end
 
     if quiz_response[:success]
-      response_hash = get_v1_formatted_response(quiz_response[:data], is_successful = true, messages = ['Waiting for a match'])
+      response_hash = get_v1_formatted_response(quiz_response[:data], true, ['Waiting for a match'])
     else
-      response_hash = get_v1_formatted_response(quiz_response[:data], is_successful = true, messages = quiz_response[:errors])
+      response_hash = get_v1_formatted_response(quiz_response[:data], true, quiz_response[:errors] || [])
     end
 
     render json: response_hash.to_json and return
