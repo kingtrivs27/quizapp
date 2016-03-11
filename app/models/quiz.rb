@@ -164,7 +164,7 @@ class Quiz < ActiveRecord::Base
     {
       type: 'NEXT_QUESTION',
       yours: is_requester_call?(params) ? requester_score : opponent_score,
-      opponent: is_opponent_call?(params) ? opponent_score : requester_score
+      opponent: is_opponent_call?(params) ? requester_score : opponent_score
     }
   end
 
