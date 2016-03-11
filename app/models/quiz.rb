@@ -164,11 +164,8 @@ class Quiz < ActiveRecord::Base
   def get_next_question_gcm_payload(params)
     {
       type: 'NEXT_QUESTION',
-      show_next: true,
-      scores: {
-        yours: is_requester_call?(params) ? requester_score : opponent_score,
-        opponent: is_opponent_call?(params) ? opponent_score : requester_score
-      }
+      yours: is_requester_call?(params) ? requester_score : opponent_score,
+      opponent: is_opponent_call?(params) ? opponent_score : requester_score
     }
   end
 

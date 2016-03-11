@@ -17,21 +17,15 @@ class Api::V1::QuizesController < Api::ApiController
           # send notification to both users
           first_user_payload = {
             type: 'START_QUIZ',
-            opponent: {
             name: current_user.name ,
-            facebook_id: current_user.facebook_id,
-            location: current_user.city,
-            image_url: current_user.image_url}
+            facebook_id: current_user.facebook_id
           }
 
           first_user = User.find_by(id: pending_request.requester_id)
           second_user_payload = {
             type: 'START_QUIZ',
-            opponent: {
             name: first_user.name,
-            facebook_id: first_user.facebook_id,
-            location: first_user.city,
-            image_url: first_user.image_url}
+            facebook_id: first_user.facebook_id
           }
 
           gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
