@@ -43,31 +43,31 @@ class Api::V1::SubjectsController < Api::ApiController
           question_id: question.id,
           description: formatted_csv_row[:option_a],
           is_correct: formatted_csv_row[:correct_option] == 'a'
-        } if formatted_csv_row[:option_a]
+        } if formatted_csv_row[:option_a].present?
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_b],
           is_correct: formatted_csv_row[:correct_option] == 'b'
-        } if formatted_csv_row[:option_b]
+        } if formatted_csv_row[:option_b].present?
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_c],
           is_correct: formatted_csv_row[:correct_option] == 'c'
-        } if formatted_csv_row[:option_c]
+        } if formatted_csv_row[:option_c].present?
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_d],
           is_correct: formatted_csv_row[:correct_option] == 'd'
-        } if formatted_csv_row[:option_d]
+        } if formatted_csv_row[:option_d].present?
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_e],
           is_correct: formatted_csv_row[:correct_option] == 'e'
-        } if formatted_csv_row[:option_e]
+        } if formatted_csv_row[:option_e].present?
 
         AnswerOption.create(answer_option_params)
       end

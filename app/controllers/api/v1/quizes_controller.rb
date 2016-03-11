@@ -12,35 +12,50 @@ class Api::V1::QuizesController < Api::ApiController
       quiz_service = QuizService.new(current_user)
 
       if pending_request.present?
-        quiz_response = quiz_service.add_as_opponent(pending_request)
-        if quiz_response[:success]
-          # send notification to both users
+        if params[:mode] == 'bot'
+
+          pending_request.update_attributes({opponent_type: 1, status: 1, opponent_id: 0, requester_waiting: false })
+
           first_user_payload = {
             type: 'START_QUIZ',
             name: current_user.name ,
             facebook_id: current_user.facebook_id
           }
 
-          first_user = User.find_by(id: pending_request.requester_id)
-          second_user_payload = {
-            type: 'START_QUIZ',
-            name: first_user.name,
-            facebook_id: first_user.facebook_id
-          }
-
-          gcm_response = send_notification(second_user_payload, Device.where(user_id: current_user.id).pluck(:user_device_id))
+          gcm_response = send_notification(first_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_api))
           Rails.logger.info("##########################################")
           Rails.logger.info(gcm_response)
           Rails.logger.info("##########################################")
+        else
+          quiz_response = quiz_service.add_as_opponent(pending_request)
+          if quiz_response[:success]
+            # send notification to both users
+            first_user_payload = {
+              type: 'START_QUIZ',
+              name: current_user.name ,
+              facebook_id: current_user.facebook_id
+            }
 
-          gcm_response = send_notification(first_user_payload, Device.where(user_id: first_user.id).pluck(:user_device_id))
-          Rails.logger.info("##########################################")
-          Rails.logger.info(gcm_response)
-          Rails.logger.info("##########################################")
+            first_user = User.find_by(id: pending_request.requester_id)
+            second_user_payload = {
+              type: 'START_QUIZ',
+              name: first_user.name,
+              facebook_id: first_user.facebook_id
+            }
 
-          pending_request.status = Quiz.statuses[:started]
-          pending_request.save
+            gcm_response = send_notification(second_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_api))
+            Rails.logger.info("##########################################")
+            Rails.logger.info(gcm_response)
+            Rails.logger.info("##########################################")
 
+            gcm_response = send_notification(first_user_payload, Device.where(user_id: first_user.id).pluck(:google_api_api))
+            Rails.logger.info("##########################################")
+            Rails.logger.info(gcm_response)
+            Rails.logger.info("##########################################")
+
+            pending_request.status = Quiz.statuses[:started]
+            pending_request.save
+          end
         end
       else
         quiz_response = quiz_service.create_pending_quiz(quiz_params)
@@ -101,9 +116,9 @@ class Api::V1::QuizesController < Api::ApiController
     available_user_ids = quiz.get_available_user_ids
 
     gcm_device_ids = []
-    devices = Device.select(:user_device_id).where(user_id: [1,3])
+    devices = Device.select(:user_device_id).where(user_id: available_user_ids)
     devices.each do |device|
-      gcm_device_ids << device.user_device_id if device.user_device_id.present?
+      gcm_device_ids << device.google_api_api if device.google_api_api.present?
     end
     binding.pry
     if gcm_device_ids.present?
