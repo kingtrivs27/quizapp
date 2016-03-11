@@ -15,9 +15,7 @@ class Api::V1::UsersController < Api::ApiController
 
       device = Device.where(user_device_id: device_params[:user_device_id]).first
 
-      device.present? ?
-        device.update_attributes(device_params.merge(user_id: user.id)) :
-        user.devices.create!(device_params)
+      device.present? ? device.update_attributes(device_params.merge(user_id: user.id)) : user.devices.create!(device_params)
 
       data = {access_token: user.api_key}
     end
