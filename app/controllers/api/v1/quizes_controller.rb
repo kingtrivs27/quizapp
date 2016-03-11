@@ -22,7 +22,7 @@ class Api::V1::QuizesController < Api::ApiController
             facebook_id: current_user.facebook_id
           }
 
-          gcm_response = send_notification(first_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_api))
+          gcm_response = send_notification(first_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_key))
           Rails.logger.info("##########################################")
           Rails.logger.info(gcm_response)
           Rails.logger.info("##########################################")
@@ -43,12 +43,12 @@ class Api::V1::QuizesController < Api::ApiController
               facebook_id: first_user.facebook_id
             }
 
-            gcm_response = send_notification(second_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_api))
+            gcm_response = send_notification(second_user_payload, Device.where(user_id: current_user.id).pluck(:google_api_key))
             Rails.logger.info("##########################################")
             Rails.logger.info(gcm_response)
             Rails.logger.info("##########################################")
 
-            gcm_response = send_notification(first_user_payload, Device.where(user_id: first_user.id).pluck(:google_api_api))
+            gcm_response = send_notification(first_user_payload, Device.where(user_id: first_user.id).pluck(:google_api_key))
             Rails.logger.info("##########################################")
             Rails.logger.info(gcm_response)
             Rails.logger.info("##########################################")
@@ -118,7 +118,7 @@ class Api::V1::QuizesController < Api::ApiController
     gcm_device_ids = []
     devices = Device.select(:user_device_id).where(user_id: available_user_ids)
     devices.each do |device|
-      gcm_device_ids << device.google_api_api if device.google_api_api.present?
+      gcm_device_ids << device.google_api_key if device.google_api_key.present?
     end
     binding.pry
     if gcm_device_ids.present?
