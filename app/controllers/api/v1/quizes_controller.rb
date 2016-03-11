@@ -58,7 +58,7 @@ class Api::V1::QuizesController < Api::ApiController
       answer_option = AnswerOption.find_by(id: option_id)
       if answer_option.question_id == question_id && answer_option.is_correct?
         response_hash = get_v1_formatted_response({}, true, messages = ['success'])
-        
+
       else
         response_hash = get_v1_formatted_response({}, false, messages = ['failure'])
       end
