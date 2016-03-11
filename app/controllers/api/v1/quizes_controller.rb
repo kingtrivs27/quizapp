@@ -28,12 +28,12 @@ class Api::V1::QuizesController < Api::ApiController
             facebook_id: first_user.facebook_id
           }
 
-          gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
+          gcm_response = send_notification(second_user_payload, Device.where(user_id: current_user.id).pluck(:user_device_id))
           Rails.logger.info("##########################################")
           Rails.logger.info(gcm_response)
           Rails.logger.info("##########################################")
 
-          gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device_id))
+          gcm_response = send_notification(first_user_payload, Device.where(user_id: first_user.id).pluck(:user_device_id))
           Rails.logger.info("##########################################")
           Rails.logger.info(gcm_response)
           Rails.logger.info("##########################################")
