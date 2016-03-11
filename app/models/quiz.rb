@@ -48,7 +48,6 @@ class Quiz < ActiveRecord::Base
       quiz_attrs_to_update.merge!(mark_user_as_waiting(params))
     end
 
-    binding.pry
     # update quiz attributes in one shot
     update_attributes(quiz_attrs_to_update)
 

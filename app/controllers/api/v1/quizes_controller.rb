@@ -120,7 +120,7 @@ class Api::V1::QuizesController < Api::ApiController
     devices.each do |device|
       gcm_device_ids << device.google_api_key if device.google_api_key.present?
     end
-    binding.pry
+
     if gcm_device_ids.present?
       payload = quiz.get_next_question_gcm_payload(params)
 
