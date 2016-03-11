@@ -64,6 +64,20 @@ class Api::V1::UsersController < Api::ApiController
     render json: get_v1_formatted_response({}, update_successful, [update_message]).to_json
   end
 
+  # def get_info_by_email
+  #   user = User.find_by(email: params[:email])
+  #
+  #   if user.present?
+  #     response = user.attributes
+  #     user.devices
+  #
+  #     render json: get_v1_formatted_response(response, true, ['user not found']).to_json
+  #   else
+  #     render json: get_v1_formatted_response({}, false, ['user not found']).to_json
+  #   end
+  #
+  # end
+
 
 
 

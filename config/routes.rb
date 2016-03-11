@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   match '/v1/import_questions_from_csv' => 'api/v1/subjects#import_questions_from_csv', :via => 'get'
 
+  # match '/v1/get_user_info_by_email' => 'api/v1/users#get_info_by_email', :via => 'post'
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
