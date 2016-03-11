@@ -9,6 +9,7 @@ gem 'mysql2', '~> 0.3.10'
 
 
 gem 'gcm'
+gem 'spreadsheet'
 
 gem 'devise'
 # Use SCSS for stylesheets

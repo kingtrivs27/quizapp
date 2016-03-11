@@ -4,11 +4,12 @@ class Api::V1::QuizesController < Api::ApiController
   def quiz_request
     requested_subject_id = params[:subject_id]
     current_user = User.find_by(api_key: params[:access_token])
+    quiz_response = {}
 
     ActiveRecord::Base.transaction do
-    # TODO::Avoid race condition in future for this request
-    pending_request = Quiz.where(subject_id: requested_subject_id).pending.limit(1).first
-    quiz_service = QuizService.new(current_user)
+      # TODO::Avoid race condition in future for this request
+      pending_request = Quiz.where(subject_id: requested_subject_id).pending.limit(1).first
+      quiz_service = QuizService.new(current_user)
 
       if pending_request.present?
         quiz_response = quiz_service.add_as_opponent(pending_request)
@@ -27,8 +28,8 @@ class Api::V1::QuizesController < Api::ApiController
             image_url: first_user.image_url}
           }
 
-          gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device))
-          gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device))
+          gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
+          gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device_id))
 
         end
       else
@@ -48,30 +49,56 @@ class Api::V1::QuizesController < Api::ApiController
     render json: get_v1_formatted_response({}, false, ['Failed to make a quiz request! please try again later']).to_json
   end
 
+
   def submit_answer
-    current_user = User.find_by(api_key: params[:access_token])
+    @current_user = User.find_by(api_key: params[:access_token])
+    params[:current_user_id] = @current_user.id
+
     answer_flag = params[:flag]
-    option_id = params[:option_id]
-    question_id = params[:question_id]
+    send_gcm = false
+    quiz = Quiz.find_by(id: params[:quiz_id])
 
-    if answer_flag == 'answer_submit'
-      answer_option = AnswerOption.find_by(id: option_id)
-      if answer_option.question_id == question_id && answer_option.is_correct?
-        response_hash = get_v1_formatted_response({}, true, messages = ['success'])
+    ActiveRecord::Base.transaction do
+      if answer_flag == 'answer_submit'
+        send_gcm = quiz.handle_answer_submit(params)
 
-      else
-        response_hash = get_v1_formatted_response({}, false, messages = ['failure'])
+      elsif answer_flag == 'timeout'
+        send_gcm = quiz.handle_answer_timeout(params)
+
+      elsif answer_flag == 'user_quit'
+        send_gcm = handle_user_quit(params)
       end
-    elsif answer_flag == 'answer_submit'
-
-    elsif answer_flag == 'user_quit'
-
     end
 
+    # todo check if quiz reload is needed
+    send_notification_for_next_question(quiz, params) if send_gcm
+
+    render json: get_v1_formatted_response({}, true, ['success']).to_json and return
+
+  rescue Exception => e
+    log_errors(e)
+    render json: get_v1_formatted_response({}, false, ['failed to submit answer']).to_json
   end
 
   private
   def quiz_params
     params.permit(:subject_id)
+  end
+
+
+  def send_notification_for_next_question(quiz, params)
+    available_user_ids = quiz.get_available_user_ids
+
+    gcm_device_ids = []
+    devices = Device.select(:user_device_id).where(user_id: [1,3])
+    devices.each do |device|
+      gcm_device_ids << device.user_device_id if device.user_device_id.present?
+    end
+    binding.pry
+    if gcm_device_ids.present?
+      payload = quiz.get_next_question_gcm_payload(params)
+
+      send_notification(payload, gcm_device_ids)
+    end
   end
 end
