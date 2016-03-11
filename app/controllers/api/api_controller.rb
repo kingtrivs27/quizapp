@@ -4,7 +4,7 @@ class Api::ApiController < ApplicationController
   # before_action :return_error
 
   # todo enable authentication
-  # before_action :authenticate
+  before_action :authenticate
 
   before_action :set_default_response_format
   # before_action :update_user_apk_version
