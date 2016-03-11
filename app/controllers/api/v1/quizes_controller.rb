@@ -40,7 +40,7 @@ class Api::V1::QuizesController < Api::ApiController
     if quiz_response[:success]
       response_hash = get_v1_formatted_response(quiz_response[:data], is_successful = true, messages = ['Waiting for a match'])
     else
-      response_hash = get_v1_formatted_response(quiz_response[:data], is_successful = false, messages = quiz_response[:errors])
+      response_hash = get_v1_formatted_response(quiz_response[:data], is_successful = true, messages = quiz_response[:errors])
     end
 
     render json: response_hash.to_json and return

@@ -12,6 +12,8 @@ class QuizService < BaseService
     begin
       if pending_request.requester_id != user.id
         pending_request.update_attributes!(opponent_id: user.id)
+      else
+        errors << "Request already received from you."
       end
 
       question_ids_json = pending_request.info
