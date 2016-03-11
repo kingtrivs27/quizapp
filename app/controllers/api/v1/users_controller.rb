@@ -89,11 +89,26 @@ class Api::V1::UsersController < Api::ApiController
   end
 
   def device_params
-    # todo generating it for now
-    params[:device_info][:google_api_key] = params[:device_info][:gcm_key]
-
-    # params.require(:device_info).permit(:user_device_id, :google_api_key, :android_id, :serial_number, :model, :board, :brand, :device, :hardware, :manufacturer, :product, :android_os)
-    params.require(:device_info).permit(:user_device_id, :google_api_key, :android_id, :serial_number)
+    # # todo generating it for now
+    # params[:device_info][:google_api_key] = params[:device_info][:gcm_key]
+    #
+    # # params.require(:device_info).permit(:user_device_id, :google_api_key, :android_id, :serial_number, :model, :board, :brand, :device, :hardware, :manufacturer, :product, :android_os)
+    # params.require(:device_info).permit(:user_device_id, :google_api_key, :android_id, :serial_number)
+    #
+    {
+      user_device_id: params[:device_info][:device_id],
+      google_api_key: params[:device_info][:gcm_key],
+      android_id: params[:device_info][:osversion],
+      serial_number: params[:device_info][:imei]
+    }
   end
 
 end
+# {"device_info"=>{
+# "gcm_key"=>"APA91bEQ_ZdyVrdJNq9c3_5k-kTC5tgtl-FboZEImJeFvEDgtmK0xsoQ_9wfEyv1k_0Z9jCZMTBzs0SmVuM78OFYRpRaiimGjenF2FJZrPPzU98e8Av9zmc",
+# "osversion"=>"5.1",
+# "device_id"=>"34db2651aaef5aa3",
+# "appversion"=>"1.0",
+# "buildNumber"=>1,
+# "imei"=>"353324061181589"},
+# "user"=>{}}
