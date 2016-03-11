@@ -59,7 +59,7 @@ class Api::V1::UsersController < Api::ApiController
       device.update_attributes(device_params)
     else
       update_successful = false
-      update_message = 'user/device not found'
+      update_message = 'user device not found'
     end
     render json: get_v1_formatted_response({}, update_successful, [update_message]).to_json
   end
@@ -77,10 +77,6 @@ class Api::V1::UsersController < Api::ApiController
   #   end
   #
   # end
-
-
-
-
 
 
   private
