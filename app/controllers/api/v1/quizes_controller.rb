@@ -29,14 +29,14 @@ class Api::V1::QuizesController < Api::ApiController
           }
 
           gcm_response = send_notification(second_user_payload, current_user.devices.collect(&:user_device_id))
-          puts "##########################################"
-          puts gcm_response
-          puts "##########################################"
+          Rails.logger.info("##########################################")
+          Rails.logger.info(gcm_response)
+          Rails.logger.info("##########################################")
 
           gcm_response = send_notification(first_user_payload, first_user.devices.collect(&:user_device_id))
-          puts "##########################################"
-          puts gcm_response
-          puts "##########################################"
+          Rails.logger.info("##########################################")
+          Rails.logger.info(gcm_response)
+          Rails.logger.info("##########################################")
 
           pending_request.status = Quiz.statuses[:started]
           pending_request.save
