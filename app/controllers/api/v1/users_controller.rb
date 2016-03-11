@@ -11,7 +11,7 @@ class Api::V1::UsersController < Api::ApiController
 
     User.transaction do
       user = User.find_by(email: user_params[:email])
-      user = User.create(name: user_params[:user_name], email: user_params[:email]) if user.blank?
+      user = User.create(name: user_params[:user_name], email: user_params[:email], facebook_id: user_params[:facebook_id]) if user.blank?
 
       device = Device.where(user_device_id: device_params[:user_device_id]).first
 
@@ -73,7 +73,8 @@ class Api::V1::UsersController < Api::ApiController
   def user_params
     {
       user_name: params[:user][:user_name],
-      email: params[:user][:email]
+      email: params[:user][:email],
+      facebook_id: params[:user][:facebook_id]
     }
   end
 

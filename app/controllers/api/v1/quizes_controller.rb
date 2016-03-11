@@ -15,15 +15,21 @@ class Api::V1::QuizesController < Api::ApiController
         quiz_response = quiz_service.add_as_opponent(pending_request)
         if quiz_response[:success]
           # send notification to both users
-          first_user_payload = {opponent: {
+          first_user_payload = {
+            type: 'START_QUIZ',
+            opponent: {
             name: current_user.name ,
+            facebook_id: current_user.facebook_id,
             location: current_user.city,
             image_url: current_user.image_url}
           }
 
           first_user = User.find_by(id: pending_request.requester_id)
-          second_user_payload = {opponent: {
-            name: first_user.name ,
+          second_user_payload = {
+            type: 'START_QUIZ',
+            opponent: {
+            name: first_user.name,
+            facebook_id: first_user.facebook_id,
             location: first_user.city,
             image_url: first_user.image_url}
           }
