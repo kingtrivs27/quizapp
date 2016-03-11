@@ -38,6 +38,9 @@ class Api::V1::QuizesController < Api::ApiController
           puts gcm_response
           puts "##########################################"
 
+          pending_request.status = Quiz.statuses[:started]
+          pending_request.save
+
         end
       else
         quiz_response = quiz_service.create_pending_quiz(quiz_params)
