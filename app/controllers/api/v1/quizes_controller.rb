@@ -105,6 +105,7 @@ class Api::V1::QuizesController < Api::ApiController
     end
 
     # todo check if quiz reload is needed
+    quiz.reload
     send_notification_for_next_question(quiz, params) if send_gcm
 
     render json: get_v1_formatted_response({}, true, ['success']).to_json and return
@@ -131,6 +132,9 @@ class Api::V1::QuizesController < Api::ApiController
 
     if gcm_device_ids.present?
       payload = quiz.get_next_question_gcm_payload(params)
+
+      Rails.logger.info("######### Next Question Gcm Payload ########")
+      Rails.logger.info(get_next_question_gcm_payload.inspect)
 
       send_notification(payload, gcm_device_ids)
     end

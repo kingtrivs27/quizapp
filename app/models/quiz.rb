@@ -91,6 +91,9 @@ class Quiz < ActiveRecord::Base
     attr_update = {requester_score: requester_score + POINTS_FOR_CORRECT_ANSWER} if is_requester_call?(params)
     # update opponent score
     attr_update = {opponent_score: opponent_score + POINTS_FOR_CORRECT_ANSWER} if is_opponent_call?(params)
+
+    Rails.logger.info("######## UPDATING SCORE #######")
+    Rails.logger.info(attr_update.inspect)
     attr_update
   end
 
