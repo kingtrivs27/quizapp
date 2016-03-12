@@ -134,7 +134,7 @@ class Api::V1::QuizesController < Api::ApiController
       payload = quiz.get_next_question_gcm_payload(params)
 
       Rails.logger.info("######### Next Question Gcm Payload ########")
-      Rails.logger.info(get_next_question_gcm_payload.inspect)
+      Rails.logger.info(payload.inspect)
 
       send_notification(payload, gcm_device_ids)
     end
