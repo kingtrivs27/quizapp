@@ -39,7 +39,9 @@ class QuizService < BaseService
     subject_id = quiz_params[:subject_id]
 
     # choose random 10 questions
-    selected_questions = Question.where(subject_id: subject_id).sample(10)
+    selected_questions_by_id = Question.where(subject_id: subject_id).sample(10).index_by(&:id)
+
+    selected_questions = selected_questions_by_id.sort.to_h.values
     selected_question_ids = selected_questions.collect{ |q| q.id }
 
     create_quiz_params = {
