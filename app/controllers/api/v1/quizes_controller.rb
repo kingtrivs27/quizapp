@@ -122,21 +122,41 @@ class Api::V1::QuizesController < Api::ApiController
 
 
   def send_notification_for_next_question(quiz, params)
-    available_user_ids = quiz.get_available_user_ids
+    available_user_ids_by_type = quiz.available_user_ids_by_type
+    available_user_ids = []
+    available_user_ids << available_user_ids_by_type[:opponent_id] if available_user_ids_by_type[:opponent_id].present?
+    available_user_ids << available_user_ids_by_type[:requester_id] if available_user_ids_by_type[:requester_id].present?
 
     gcm_device_ids = []
+    opponent_gcm_keys = []
+    requester_gcm_keys = []
     devices = Device.where(user_id: available_user_ids)
     devices.each do |device|
-      gcm_device_ids << device.google_api_key if device.google_api_key.present?
+      if device.user_id == available_user_ids_by_type[:opponent_id]
+        opponent_gcm_keys << device.google_api_key if device.google_api_key.present?
+      elsif device.user_id == available_user_ids_by_type[:requester_id]
+        requester_gcm_keys << device.google_api_key if device.google_api_key.present?
+      end
     end
 
-    if gcm_device_ids.present?
-      payload = quiz.get_next_question_gcm_payload(params)
+    if opponent_gcm_keys.present?
+      payload = quiz.get_next_question_gcm_payload('opponent')
+
+      Rails.logger.info("######### Next Question Gcm Payload opponent ########")
+      Rails.logger.info(payload.inspect)
+
+      send_notification(payload, opponent_gcm_keys)
+    end
+
+    if requester_gcm_keys.present?
+      payload = quiz.get_next_question_gcm_payload('requester')
 
       Rails.logger.info("######### Next Question Gcm Payload ########")
       Rails.logger.info(payload.inspect)
 
-      send_notification(payload, gcm_device_ids)
+      send_notification(payload, requester_gcm_keys)
     end
+
+
   end
 end

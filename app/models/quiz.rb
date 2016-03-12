@@ -155,19 +155,19 @@ class Quiz < ActiveRecord::Base
     opponent_type == 'bot'
   end
 
-  def get_available_user_ids
-    available_user_ids = []
-    available_user_ids << opponent_id if opponent_available && !is_opponent_bot?
-    available_user_ids << requester_id if requester_available
+  def available_user_ids_by_type
+    available_user_ids = {}
+    available_user_ids[:opponent_id] = opponent_id if opponent_available && !is_opponent_bot?
+    available_user_ids[:requester_id] = requester_id if requester_available
 
     available_user_ids
   end
 
-  def get_next_question_gcm_payload(params)
+  def get_next_question_gcm_payload(user_type)
     {
       type: 'NEXT_QUESTION',
-      yours: is_requester_call?(params) ? requester_score : opponent_score,
-      opponent: is_requester_call?(params) ? opponent_score : requester_score
+      yours: user_type == 'requester' ? requester_score : opponent_score,
+      opponent: user_type == 'requester' ? opponent_score : requester_score
     }
   end
 
