@@ -100,7 +100,7 @@ class Api::V1::QuizesController < Api::ApiController
         send_gcm = quiz.handle_answer_timeout(params)
 
       elsif answer_flag == 'user_quit'
-        send_gcm = handle_user_quit(params)
+        send_gcm = quiz.handle_user_quit(params)
       end
     end
 
