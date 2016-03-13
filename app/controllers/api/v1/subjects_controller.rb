@@ -33,7 +33,7 @@ class Api::V1::SubjectsController < Api::ApiController
       }
 
       #   todo comment this in V2, hack for V1
-      formatted_csv_row[:subject_name] = csv_row['subject_name'].to_s.strip
+      formatted_csv_row[:subject_name] = csv_row['chapter_name'].to_s.strip
 
 
       # ignore invalid row
