@@ -73,7 +73,7 @@ class Api::V1::SubjectsController < Api::ApiController
           description: formatted_csv_row[:option_d],
           is_correct: formatted_csv_row[:correct_option] == '4'
         }
-binding.pry
+
         AnswerOption.create(answer_option_params)
 
         # csv_row.is_imported = 1
