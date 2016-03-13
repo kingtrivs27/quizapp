@@ -20,12 +20,9 @@ class Api::V1::SubjectsController < Api::ApiController
 
     csv.each do |csv_row|
       formatted_csv_row = {
-      #   todo uncomment this in V2
-        # course_name: csv_row['course_name'],
-        # chapter_name: csv_row['chapter_name'],
-        # subject_name: csv_row['subject_name'].to_s.strip,
-        subject_name: csv_row['chapter_name'].to_s.strip,
-
+        course_name: csv_row['course_name'],
+        chapter_name: csv_row['chapter_name'],
+        subject_name: csv_row['subject_name'].to_s.strip,
         subject_id_in_db: csv_row['subject_id_in_db'].to_s.strip,
         question_desc: csv_row['question_desc'].to_s.strip,
         correct_option:csv_row['correct_option'.to_s.strip],
@@ -34,6 +31,10 @@ class Api::V1::SubjectsController < Api::ApiController
         option_c: csv_row['option_c'].to_s.strip,
         option_d: csv_row['option_d'].to_s.strip
       }
+
+      #   todo comment this in V2, hack for V1
+      formatted_csv_row[:subject_name] = csv_row['subject_name'].to_s.strip
+
 
       # ignore invalid row
       next if !is_valid_row?(formatted_csv_row)
