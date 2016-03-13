@@ -1,4 +1,7 @@
 class Api::V1::SubjectsController < Api::ApiController
+
+  skip_before_filter :authenticate, only: [:import_questions_from_csv]
+
   require 'csv'
 
   def get_subjects
@@ -9,25 +12,32 @@ class Api::V1::SubjectsController < Api::ApiController
   end
 
   def import_questions_from_csv
+    course_file = params[:course_file]
 
-    csv_file_path = File.join(Rails.root, 'app', 'csv', 'questions.csv')
+    csv_file_path = File.join(Rails.root, 'app', 'csv', course_file+'.csv')
     csv_file = File.open(csv_file_path, "r:ISO-8859-1")
     csv = CSV.parse(csv_file, :headers => true)
 
-    create_test_students_params, noisy_data = [], []
-    #60,000
     csv.each do |csv_row|
       formatted_csv_row = {
-        subject_name: csv_row['subject_name'].to_s.strip,
+      #   todo uncomment this in V2
+        # course_name: csv_row['course_name'],
+        # chapter_name: csv_row['chapter_name'],
+        # subject_name: csv_row['subject_name'].to_s.strip,
+        subject_name: csv_row['chapter_name'].to_s.strip,
+
         subject_id_in_db: csv_row['subject_id_in_db'].to_s.strip,
         question_desc: csv_row['question_desc'].to_s.strip,
         correct_option:csv_row['correct_option'.to_s.strip],
         option_a: csv_row['option_a'].to_s.strip,
         option_b: csv_row['option_b'].to_s.strip,
         option_c: csv_row['option_c'].to_s.strip,
-        option_d: csv_row['option_d'].to_s.strip,
-        option_e: csv_row['option_e'].to_s.strip
+        option_d: csv_row['option_d'].to_s.strip
       }
+
+      # ignore invalid row
+      next if !is_valid_row?(formatted_csv_row)
+
       ActiveRecord::Base.transaction do
         subject = Subject.find_by(name: formatted_csv_row[:subject_name])
         if subject.blank?
@@ -43,37 +53,46 @@ class Api::V1::SubjectsController < Api::ApiController
           question_id: question.id,
           description: formatted_csv_row[:option_a],
           is_correct: formatted_csv_row[:correct_option] == 'a'
-        } if formatted_csv_row[:option_a].present?
+        }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_b],
           is_correct: formatted_csv_row[:correct_option] == 'b'
-        } if formatted_csv_row[:option_b].present?
+        }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_c],
           is_correct: formatted_csv_row[:correct_option] == 'c'
-        } if formatted_csv_row[:option_c].present?
+        }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_d],
           is_correct: formatted_csv_row[:correct_option] == 'd'
-        } if formatted_csv_row[:option_d].present?
-
-        answer_option_params << {
-          question_id: question.id,
-          description: formatted_csv_row[:option_e],
-          is_correct: formatted_csv_row[:correct_option] == 'e'
-        } if formatted_csv_row[:option_e].present?
+        }
 
         AnswerOption.create(answer_option_params)
+
+        # csv_row.is_imported = 1
       end
     end
 
     render json: get_v1_formatted_response({}, true, ['success'])
 
+  end
+
+  private
+  def is_valid_row?(formatted_csv_row)
+    formatted_csv_row[:course_name].present? &&
+    formatted_csv_row[:chapter_name].present? &&
+    formatted_csv_row[:subject_name].present? &&
+    formatted_csv_row[:question_desc].present? &&
+    formatted_csv_row[:correct_option].present? &&
+    formatted_csv_row[:option_a].present? &&
+    formatted_csv_row[:option_b].present? &&
+    formatted_csv_row[:option_c].present? &&
+    formatted_csv_row[:option_d].present?
   end
 end
