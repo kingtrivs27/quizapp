@@ -53,27 +53,27 @@ class Api::V1::SubjectsController < Api::ApiController
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_a],
-          is_correct: formatted_csv_row[:correct_option] == 'a'
+          is_correct: formatted_csv_row[:correct_option] == '1'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_b],
-          is_correct: formatted_csv_row[:correct_option] == 'b'
+          is_correct: formatted_csv_row[:correct_option] == '2'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_c],
-          is_correct: formatted_csv_row[:correct_option] == 'c'
+          is_correct: formatted_csv_row[:correct_option] == '3'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_d],
-          is_correct: formatted_csv_row[:correct_option] == 'd'
+          is_correct: formatted_csv_row[:correct_option] == '4'
         }
-
+binding.pry
         AnswerOption.create(answer_option_params)
 
         # csv_row.is_imported = 1
