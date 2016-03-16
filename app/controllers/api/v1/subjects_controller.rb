@@ -12,45 +12,43 @@ class Api::V1::SubjectsController < Api::ApiController
   end
 
   def get_subjects_v2
-    response  ={
-      success: true,
-      messages: [],
-      data: {
-        courses: [
-          {
-            id: 12,
-            name: 'CA CPT ACCOUNTS',
-               subjects: [
-                 {
-                   id: 22,
-                   name: 'Mercentile Law',
-                      topics: [
-                        {
-                          id: 1,
-                          name: 'Android'
-                        },
-                        {
-                          id: 2,
-                          name: 'Algorithmic Aptitude'
-                        }
-                      ]
-                 },
-                 {
-                   id: 221,
-                   name: 'Mercentile Law2',
-                      topics: [
-                        {
-                          id: 11,
-                          name: 'Android 2'
-                        }
-                      ]
-                 }
-               ]
+    db_courses = Course.all
+    db_subject_parents = SubjectParent.all.group_by(&:course_id)
+    db_subjects = Subject.all.group_by(&:subject_parent_id)
+
+
+    response = {}
+    data = {}
+    data[:courses] = []
+
+    db_courses.each do |course|
+      subjects = []
+
+      db_subject_parents[course.id].each do |subject_parent|
+        topics = []
+
+        db_subjects[subject_parent.id].each do |subject|
+          topics << {
+            id: subject.id,
+            name: subject.name
           }
-        ]
-      },
-      version: '2.0.0'
-    }
+        end
+
+        subjects << {
+          id: subject_parent.id,
+          name: subject_parent.name,
+          topics: topics
+        }
+      end
+
+      data[:courses] << {
+        id: course.id,
+        name: course.name,
+        subjects: subjects
+      }
+    end
+
+    response  = get_v1_formatted_response(data, true, [''])
 
     render json: response.to_json
   end
@@ -64,10 +62,9 @@ class Api::V1::SubjectsController < Api::ApiController
 
     csv.each do |csv_row|
       formatted_csv_row = {
-        course_name: csv_row['course_name'],
-        chapter_name: csv_row['chapter_name'],
+        course_name: csv_row['course_name'].to_s.strip,
         subject_name: csv_row['subject_name'].to_s.strip,
-        subject_id_in_db: csv_row['subject_id_in_db'].to_s.strip,
+        topic_name: csv_row['chapter_name'].to_s.strip,
         question_desc: csv_row['question_desc'].to_s.strip,
         correct_option:csv_row['correct_option'.to_s.strip],
         option_a: csv_row['option_a'].to_s.strip,
@@ -76,17 +73,25 @@ class Api::V1::SubjectsController < Api::ApiController
         option_d: csv_row['option_d'].to_s.strip
       }
 
-      #   todo comment this in V2, hack for V1
-      formatted_csv_row[:subject_name] = csv_row['chapter_name'].to_s.strip
-
-
       # ignore invalid row
       next if !is_valid_row?(formatted_csv_row)
 
       ActiveRecord::Base.transaction do
-        subject = Subject.find_by(name: formatted_csv_row[:subject_name])
+        course = Course.find_by(name: formatted_csv_row[:course_name])
+        if course.blank?
+          course = Course.create({name: formatted_csv_row[:course_name]})
+        end
+
+        # Subject as per UI
+        subject_parent = SubjectParent.find_by(name: formatted_csv_row[:subject_name], course_id: course.id)
+        if subject_parent.blank?
+          subject_parent = SubjectParent.create({name: formatted_csv_row[:subject_name], course_id: course.id})
+        end
+
+        # Topic as per UI
+        subject = Subject.find_by(name: formatted_csv_row[:topic_name], subject_parent_id: subject_parent.id)
         if subject.blank?
-          subject = Subject.create({name: formatted_csv_row[:subject_name]})
+          subject = Subject.create({name: formatted_csv_row[:topic_name], subject_parent_id: subject_parent.id})
         end
 
         question_params = {description: formatted_csv_row[:question_desc], subject_id: subject.id}
@@ -131,7 +136,7 @@ class Api::V1::SubjectsController < Api::ApiController
   private
   def is_valid_row?(formatted_csv_row)
     formatted_csv_row[:course_name].present? &&
-    formatted_csv_row[:chapter_name].present? &&
+    formatted_csv_row[:topic_name].present? &&
     formatted_csv_row[:subject_name].present? &&
     formatted_csv_row[:question_desc].present? &&
     formatted_csv_row[:correct_option].present? &&
