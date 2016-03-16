@@ -19,29 +19,29 @@ class Api::V1::SubjectsController < Api::ApiController
         courses: [
           {
             id: 12,
-            name: CA CPT ACCOUNTS,
+            name: 'CA CPT ACCOUNTS',
                subjects: [
                  {
                    id: 22,
-                   name: Mercentile Law,
+                   name: 'Mercentile Law',
                       topics: [
                         {
                           id: 1,
-                          name: Android
+                          name: 'Android'
                         },
                         {
                           id: 2,
-                          name: Algorithmic Aptitude
+                          name: 'Algorithmic Aptitude'
                         }
                       ]
                  },
                  {
                    id: 221,
-                   name: Mercentile Law 2,
+                   name: 'Mercentile Law2',
                       topics: [
                         {
                           id: 11,
-                          name: Android 2
+                          name: 'Android 2'
                         }
                       ]
                  }
