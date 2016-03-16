@@ -11,6 +11,50 @@ class Api::V1::SubjectsController < Api::ApiController
     render json: get_v1_formatted_response({all_subjects: all_subjects}, true, [])
   end
 
+  def get_subjects_v2
+    response  ={
+      success: true,
+      messages: [],
+      data: {
+        courses: [
+          {
+            id: 12,
+            name: CA CPT ACCOUNTS,
+               subjects: [
+                 {
+                   id: 22,
+                   name: Mercentile Law,
+                      topics: [
+                        {
+                          id: 1,
+                          name: Android
+                        },
+                        {
+                          id: 2,
+                          name: Algorithmic Aptitude
+                        }
+                      ]
+                 },
+                 {
+                   id: 221,
+                   name: Mercentile Law 2,
+                      topics: [
+                        {
+                          id: 11,
+                          name: Android 2
+                        }
+                      ]
+                 }
+               ]
+          }
+        ]
+      },
+      version: '2.0.0'
+    }
+
+    render json: response.to_json
+  end
+
   def import_questions_from_csv
     course_file = params[:course_file]
 
