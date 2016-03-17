@@ -67,6 +67,7 @@ class Api::V1::SubjectsController < Api::ApiController
         topic_name: csv_row['chapter_name'].to_s.strip,
         question_desc: csv_row['question_desc'].to_s.strip,
         correct_option:csv_row['correct_option'.to_s.strip],
+        difficulty_level:csv_row['difficulty_level'.to_s.strip],
         option_a: csv_row['option_a'].to_s.strip,
         option_b: csv_row['option_b'].to_s.strip,
         option_c: csv_row['option_c'].to_s.strip,
@@ -94,7 +95,9 @@ class Api::V1::SubjectsController < Api::ApiController
           subject = Subject.create({name: formatted_csv_row[:topic_name], subject_parent_id: subject_parent.id})
         end
 
-        question_params = {description: formatted_csv_row[:question_desc], subject_id: subject.id}
+        question_params = {description: formatted_csv_row[:question_desc],
+                           subject_id: subject.id, level:
+                           formatted_csv_row[:difficulty_level]}
         question = Question.create(question_params)
 
         answer_option_params = []
@@ -143,6 +146,7 @@ class Api::V1::SubjectsController < Api::ApiController
     formatted_csv_row[:option_a].present? &&
     formatted_csv_row[:option_b].present? &&
     formatted_csv_row[:option_c].present? &&
-    formatted_csv_row[:option_d].present?
+    formatted_csv_row[:option_d].present? &&
+    formatted_csv_row[:difficulty_level].present?
   end
 end
