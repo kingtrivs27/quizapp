@@ -30,8 +30,9 @@ class Quiz < ActiveRecord::Base
     question_id = params[:question_id]
     quiz_attrs_to_update = {}
 
-    answer_option = AnswerOption.find_by(id: option_id)
-    if answer_option.question_id == question_id.to_i && answer_option.is_correct?
+    # answer_option = AnswerOption.find_by(id: option_id)
+    correct_answer = AnswerOption.find_by(question_id: question_id, is_correct: true)
+    if correct_answer.id == option_id
       quiz_attrs_to_update.merge!(new_user_score(params))
     end
 
@@ -101,10 +102,14 @@ class Quiz < ActiveRecord::Base
     attr_update
   end
 
-  def new_bot_score(params)
+  def new_bot_score(correct_option_id)
     # update opponent score in case of bot_mode
-    # todo use enum
-    is_opponent_bot? ? {opponent_score: params[:bot_score]} : {}
+    (is_opponent_bot? && check_random_correctness(correct_option_id)) ? {opponent_score: opponent_score + POINTS_FOR_CORRECT_ANSWER} : {}
+  end
+
+  # todo weights can be assigned as per the level of question
+  def check_random_correctness(correct_option_id)
+    [correct_option_id, -1, -2, -3].sample == correct_option_id
   end
 
   def update_last_question_answered_by_users(params)
