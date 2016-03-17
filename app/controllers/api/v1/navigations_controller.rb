@@ -5,7 +5,7 @@ class Api::V1::NavigationsController < Api::ApiController
         drawer: [
           {
             name: 'About Us',
-            uri: 'cacpt://webview/?au=http://ec2-54-187-93-74.us-west-2.compute.amazonaws.com/v2/about_us'
+            uri: 'cacpt://web/?au=http://ec2-54-187-93-74.us-west-2.compute.amazonaws.com/v2/about_us'
           }
         ]
     }
