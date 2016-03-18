@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   match '/v1/upload_from_file/:course_file' => 'api/v1/subjects#import_questions_from_csv', :via => 'get'
 
+  match '/v1/get_game_profile' => 'api/v1/users#get_game_profile', :via => 'post'
+
   # match '/v1/get_user_info_by_email' => 'api/v1/users#get_info_by_email', :via => 'post'
 
 
