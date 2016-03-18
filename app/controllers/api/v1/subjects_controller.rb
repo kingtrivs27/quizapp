@@ -65,13 +65,13 @@ class Api::V1::SubjectsController < Api::ApiController
         course_name: csv_row['course_name'].to_s.strip,
         subject_name: csv_row['subject_name'].to_s.strip,
         topic_name: csv_row['chapter_name'].to_s.strip,
-        question_desc: csv_row['question_desc'].to_s.strip,
+        question_desc: ActionController::Base.helpers.strip_tags(csv_row['question_desc'].to_s.strip),
         correct_option:csv_row['correct_option'.to_s.strip],
         difficulty_level:csv_row['difficulty_level'.to_s.strip],
-        option_a: csv_row['option_a'].to_s.strip,
-        option_b: csv_row['option_b'].to_s.strip,
-        option_c: csv_row['option_c'].to_s.strip,
-        option_d: csv_row['option_d'].to_s.strip
+        option_a: ActionController::Base.helpers.strip_tags(csv_row['option_a'].to_s.strip),
+        option_b: ActionController::Base.helpers.strip_tags(csv_row['option_b'].to_s.strip),
+        option_c: ActionController::Base.helpers.strip_tags(csv_row['option_c'].to_s.strip),
+        option_d: ActionController::Base.helpers.strip_tags(csv_row['option_d'].to_s.strip)
       }
 
       # ignore invalid row
