@@ -4,8 +4,12 @@ class Api::V1::NavigationsController < Api::ApiController
     response = {
         drawer: [
           {
+            name: 'Game Profile',
+            uri: 'cacpt://game_profile'
+          },
+          {
             name: 'About Us',
-            uri: 'cacpt://web/?au=http://ec2-54-187-93-74.us-west-2.compute.amazonaws.com/v2/about_us'
+            uri: 'cacpt://webview/?au=http://ec2-54-187-93-74.us-west-2.compute.amazonaws.com/v2/about_us'
           }
         ]
     }
