@@ -67,10 +67,10 @@ class Api::V1::UsersController < Api::ApiController
       name: @current_user.name,
       email: @current_user.email,
       image_url: @current_user.image_url,
-      total_score: 120,
-      total_quiz_played: 20,
-      won: 18,
-      lost: 2
+      total_score: @current_user.total_score,
+      total_quiz_played: @current_user.total_quiz_played,
+      won: @current_user.won,
+      lost: @current_user.lost
     }
     render json: get_v1_formatted_response(data, true, []).to_json
   end

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   match '/v1/get_game_profile' => 'api/v1/users#get_game_profile', :via => 'post'
 
+  match '/v1/quiz_finished' => 'api/v1/quizes#quiz_finished', :via => 'post'
+
   # match '/v1/get_user_info_by_email' => 'api/v1/users#get_info_by_email', :via => 'post'
 
 

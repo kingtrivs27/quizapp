@@ -8,7 +8,8 @@ class Api::V1::QuizesController < Api::ApiController
 
 
     # TODO::Avoid race condition in future for this request
-    pending_request = Quiz.where(subject_id: requested_subject_id).pending.limit(1).first
+    valid_quiz_time = (Time.now - 29.seconds)
+    pending_request = Quiz.where(subject_id: requested_subject_id).pending.where("created_at > ?", valid_quiz_time).limit(1).first
     quiz_service = QuizService.new(current_user)
 
     if pending_request.present?
@@ -110,6 +111,30 @@ class Api::V1::QuizesController < Api::ApiController
 
     render json: get_v1_formatted_response({}, true, ['success']).to_json and return
 
+  rescue Exception => e
+    log_errors(e)
+    render json: get_v1_formatted_response({}, false, ['failed to submit answer']).to_json
+  end
+
+
+  def quiz_finished
+    quiz_id = params[:quiz_id]
+    quiz = Quiz.find_by(id: quiz_id)
+    ActiveRecord::Base.transaction do
+      if quiz.present?
+        quiz.finished!
+
+        requester_won = quiz.requester_score >= quiz.opponent_score
+        user_one = User.find_by(id: quiz.requester_id)
+        user_one.update_game_profile(quiz.requester_score, requester_won)
+
+        if !quiz.is_opponent_bot?
+          user_two = User.find_by(id: quiz.opponent_id)
+          opponent_won = quiz.opponent_score >= quiz.requester_score
+          user_two.update_game_profile(quiz.opponent_score, requester_won)
+        end
+      end
+    end
   rescue Exception => e
     log_errors(e)
     render json: get_v1_formatted_response({}, false, ['failed to submit answer']).to_json

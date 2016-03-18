@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317182400) do
+ActiveRecord::Schema.define(version: 20160318191226) do
 
   create_table "answer_options", force: :cascade do |t|
     t.integer  "question_id", limit: 4,                     null: false
@@ -77,16 +77,20 @@ ActiveRecord::Schema.define(version: 20160317182400) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "email",       limit: 255
-    t.string   "phone",       limit: 255
-    t.string   "city",        limit: 255
-    t.string   "api_key",     limit: 255
-    t.integer  "api_version", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image_url",   limit: 255
-    t.string   "facebook_id", limit: 255
+    t.string   "name",              limit: 255
+    t.string   "email",             limit: 255
+    t.string   "phone",             limit: 255
+    t.string   "city",              limit: 255
+    t.string   "api_key",           limit: 255
+    t.integer  "api_version",       limit: 4
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "image_url",         limit: 255
+    t.string   "facebook_id",       limit: 255
+    t.integer  "total_score",       limit: 4,   default: 0, null: false
+    t.integer  "total_quiz_played", limit: 4,   default: 0, null: false
+    t.integer  "won",               limit: 4,   default: 0, null: false
+    t.integer  "lost",              limit: 4,   default: 0, null: false
   end
 
 end
