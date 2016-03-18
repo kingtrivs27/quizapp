@@ -54,18 +54,21 @@ ActiveRecord::Schema.define(version: 20160318192905) do
   add_index "questions", ["subject_id"], name: "index_questions_on_subject_id", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
-    t.integer  "subject_id",          limit: 4,                    null: false
-    t.integer  "requester_id",        limit: 4,                    null: false
-    t.integer  "opponent_id",         limit: 4
-    t.integer  "requester_score",     limit: 4,     default: 0
-    t.integer  "opponent_score",      limit: 4,     default: 0
-    t.boolean  "requester_available",               default: true
-    t.boolean  "opponent_available",                default: true
-    t.integer  "opponent_type",       limit: 4,     default: 0
-    t.integer  "status",              limit: 4,     default: 0
-    t.text     "info",                limit: 65535
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.integer  "subject_id",             limit: 4,                     null: false
+    t.integer  "requester_id",           limit: 4,                     null: false
+    t.integer  "opponent_id",            limit: 4
+    t.integer  "requester_score",        limit: 4,     default: 0
+    t.integer  "opponent_score",         limit: 4,     default: 0
+    t.boolean  "requester_available",                  default: true
+    t.boolean  "opponent_available",                   default: true
+    t.boolean  "requester_waiting",                    default: false
+    t.boolean  "opponent_waiting",                     default: false
+    t.integer  "last_question_answered", limit: 4,     default: 0
+    t.integer  "opponent_type",          limit: 4,     default: 0
+    t.integer  "status",                 limit: 4,     default: 0
+    t.text     "info",                   limit: 65535
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
   end
 
   add_index "quizzes", ["created_at"], name: "index_quizzes_on_created_at", using: :btree
