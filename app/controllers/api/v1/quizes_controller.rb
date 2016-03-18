@@ -140,6 +140,8 @@ class Api::V1::QuizesController < Api::ApiController
         end
       end
     end
+    render json: get_v1_formatted_response({}, true, ['success']).to_json
+
   rescue Exception => e
     log_errors(e)
     render json: get_v1_formatted_response({}, false, ['failed to submit answer']).to_json
