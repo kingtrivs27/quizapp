@@ -8,8 +8,13 @@ class Api::V1::QuizesController < Api::ApiController
 
 
     # TODO::Avoid race condition in future for this request
-    valid_quiz_time = (Time.now - 29.seconds)
-    pending_request = Quiz.where(subject_id: requested_subject_id).pending.where("created_at > ?", valid_quiz_time).limit(1).first
+    if params[:mode] == 'bot'
+      pending_request = Quiz.find_by(id: params[:quiz_id])
+    else
+      valid_quiz_time = (Time.now - 29.seconds)
+      pending_request = Quiz.where(subject_id: requested_subject_id).pending.where("created_at > ?", valid_quiz_time).limit(1).first
+    end
+
     quiz_service = QuizService.new(current_user)
 
     if pending_request.present?
