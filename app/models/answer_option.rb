@@ -9,6 +9,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+# Indexes
+#
+#  index_answer_options_on_question_id  (question_id)
+#
 
 class AnswerOption < ActiveRecord::Base
   belongs_to :answer

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318191226) do
+ActiveRecord::Schema.define(version: 20160318192905) do
 
   create_table "answer_options", force: :cascade do |t|
     t.integer  "question_id", limit: 4,                     null: false
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
   end
+
+  add_index "answer_options", ["question_id"], name: "index_answer_options_on_question_id", using: :btree
 
   create_table "courses", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.datetime "updated_at",                   null: false
   end
 
+  add_index "devices", ["user_device_id"], name: "index_devices_on_user_device_id", using: :btree
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
 
   create_table "questions", force: :cascade do |t|
@@ -46,6 +49,9 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.datetime "updated_at",                null: false
     t.integer  "level",       limit: 4,     null: false
   end
+
+  add_index "questions", ["level"], name: "index_questions_on_level", using: :btree
+  add_index "questions", ["subject_id"], name: "index_questions_on_subject_id", using: :btree
 
   create_table "quizzes", force: :cascade do |t|
     t.integer  "subject_id",          limit: 4,                    null: false
@@ -62,6 +68,9 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.datetime "updated_at",                                       null: false
   end
 
+  add_index "quizzes", ["created_at"], name: "index_quizzes_on_created_at", using: :btree
+  add_index "quizzes", ["subject_id", "status"], name: "index_quizzes_on_subject_id_and_status", using: :btree
+
   create_table "subject_parents", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
     t.integer  "course_id",  limit: 4,   null: false
@@ -69,12 +78,16 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.datetime "updated_at",             null: false
   end
 
+  add_index "subject_parents", ["course_id"], name: "index_subject_parents_on_course_id", using: :btree
+
   create_table "subjects", force: :cascade do |t|
     t.string   "name",              limit: 255, null: false
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
     t.integer  "subject_parent_id", limit: 4,   null: false
   end
+
+  add_index "subjects", ["subject_parent_id"], name: "index_subjects_on_subject_parent_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",              limit: 255
@@ -92,5 +105,8 @@ ActiveRecord::Schema.define(version: 20160318191226) do
     t.integer  "won",               limit: 4,   default: 0, null: false
     t.integer  "lost",              limit: 4,   default: 0, null: false
   end
+
+  add_index "users", ["api_key"], name: "index_users_on_api_key", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
 
 end

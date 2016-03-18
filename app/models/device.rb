@@ -13,7 +13,8 @@
 #
 # Indexes
 #
-#  index_devices_on_user_id  (user_id)
+#  index_devices_on_user_device_id  (user_device_id)
+#  index_devices_on_user_id         (user_id)
 #
 
 class Device < ActiveRecord::Base

@@ -8,6 +8,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_subject_parents_on_course_id  (course_id)
+#
 
 # Note: This entity is called as 'Subject' in UI
 class SubjectParent < ActiveRecord::Base

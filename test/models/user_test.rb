@@ -18,6 +18,11 @@
 #  won               :integer          default(0), not null
 #  lost              :integer          default(0), not null
 #
+# Indexes
+#
+#  index_users_on_api_key  (api_key) UNIQUE
+#  index_users_on_email    (email)
+#
 
 require 'test_helper'
 

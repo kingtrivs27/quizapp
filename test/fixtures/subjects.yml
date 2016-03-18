@@ -8,6 +8,10 @@
 #  updated_at        :datetime         not null
 #  subject_parent_id :integer          not null
 #
+# Indexes
+#
+#  index_subjects_on_subject_parent_id  (subject_parent_id)
+#
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 

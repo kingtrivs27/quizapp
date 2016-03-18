@@ -18,6 +18,11 @@
 #  won               :integer          default(0), not null
 #  lost              :integer          default(0), not null
 #
+# Indexes
+#
+#  index_users_on_api_key  (api_key) UNIQUE
+#  index_users_on_email    (email)
+#
 
 class User < ActiveRecord::Base
   before_create :set_api_key

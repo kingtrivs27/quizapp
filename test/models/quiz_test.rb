@@ -16,6 +16,11 @@
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
 #
+# Indexes
+#
+#  index_quizzes_on_created_at             (created_at)
+#  index_quizzes_on_subject_id_and_status  (subject_id,status)
+#
 
 require 'test_helper'
 
