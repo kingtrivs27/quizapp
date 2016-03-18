@@ -12,9 +12,9 @@ class Api::V1::SubjectsController < Api::ApiController
   end
 
   def get_subjects_v2
-    db_courses = Course.all
-    db_subject_parents = SubjectParent.all.group_by(&:course_id)
-    db_subjects = Subject.all.group_by(&:subject_parent_id)
+    db_courses = Course.all.sort_by &:name
+    db_subject_parents = SubjectParent.all.sort_by(&:name).group_by(&:course_id)
+    db_subjects = Subject.all.sort_by(&:name).group_by(&:subject_parent_id)
 
 
     response = {}
