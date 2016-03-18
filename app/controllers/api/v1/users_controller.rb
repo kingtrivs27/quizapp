@@ -62,6 +62,19 @@ class Api::V1::UsersController < Api::ApiController
     render json: get_v1_formatted_response({}, update_successful, [update_message]).to_json
   end
 
+  def get_game_profile
+    data = {
+      name: @current_user.name,
+      email: @current_user.email,
+      image_url: @current_user.image_url,
+      total_score: 120,
+      total_quiz_played: 20,
+      won: 18,
+      lost: 2
+    }
+    render json: get_v1_formatted_response(data, true, []).to_json
+  end
+
   # def get_info_by_email
   #   user = User.find_by(email: params[:email])
   #
