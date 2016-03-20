@@ -50,6 +50,103 @@ class Api::V1::SubjectsController < Api::ApiController
 
     response  = get_v1_formatted_response(data, true, [''])
 
+    response = {
+      success: true,
+      messages: [
+        ""
+      ],
+      data: {
+        course_parents: [
+          {
+            id: 12,
+            name: "CA-CPT",
+            courses: [
+              {
+                id: 4,
+                name: "CA CPT ACCOUNTS",
+                subjects: [
+                  {
+                    id: 3,
+                    name: "Fundamentals of Accounting",
+                    topics: [
+                      {
+                        id: 37,
+                        name: "Accounting As A Measurement Discipline- Valuation Principles, Accounting Estimates"
+                      },
+                      {
+                        id: 38,
+                        name: "Accounting Concepts, Principles & Conventions"
+                      },
+                      {
+                        id: 40,
+                        name: "Accounting Policies"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                id: 3,
+                name: "CA CPT ECONOMICS",
+                subjects: [
+                  {
+                    id: 2,
+                    name: "Genearal Economics",
+                    topics: [
+                      {
+                        id: 27,
+                        name: "Balance of Payment and External Debt"
+                      },
+                      {
+                        id: 26,
+                        name: "Basic Understanding of Tax System in India"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                id: 2,
+                name: "CA CPT LAW",
+                subjects: [
+                  {
+                    id: 1,
+                    name: "Mercentile Law",
+                    topics: [
+                      {
+                        id: 11,
+                        name: "ICA 1872- ACCEPTANCE"
+                      },
+                      {
+                        id: 9,
+                        name: "ICA 1872- BASICS"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                id: 5,
+                name: "CA CPT QT",
+                subjects: [
+                  {
+                    id: 4,
+                    name: "Quatitative Aptitude",
+                    topics: [
+                      {
+                        id: 60,
+                        name: "Equations"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        version: "1.0.0"
+      }
+    }
     render json: response.to_json
   end
 
