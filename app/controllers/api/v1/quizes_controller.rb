@@ -126,7 +126,7 @@ class Api::V1::QuizesController < Api::ApiController
     quiz_id = params[:quiz_id]
     quiz = Quiz.find_by(id: quiz_id)
     ActiveRecord::Base.transaction do
-      if quiz.present?
+      if quiz.present? && !quiz.finished?
         quiz.finished!
 
         requester_won = quiz.requester_score >= quiz.opponent_score
@@ -136,7 +136,7 @@ class Api::V1::QuizesController < Api::ApiController
         if !quiz.is_opponent_bot?
           user_two = User.find_by(id: quiz.opponent_id)
           opponent_won = quiz.opponent_score >= quiz.requester_score
-          user_two.update_game_profile(quiz.opponent_score, requester_won)
+          user_two.update_game_profile(quiz.opponent_score, opponent_won)
         end
       end
     end
