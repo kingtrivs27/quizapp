@@ -54,7 +54,7 @@ class Api::V1::SubjectsController < Api::ApiController
     Course.course_parents.each_pair do |course_parent_name, course_parent_id|
       course_parents << {
         id: course_parent_id,
-        name: course_parent_name.upcase,
+        name: course_parent_name.titleize.upcase,
         courses: courses[course_parent_name]
       }
     end
