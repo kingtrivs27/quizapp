@@ -68,10 +68,11 @@ class Api::V1::SubjectsController < Api::ApiController
     course_file = params[:course_file]
 
     csv_file_path = File.join(Rails.root, 'app', 'csv', course_file+'.csv')
-    csv_file = File.open(csv_file_path, "r:ISO-8859-1")
+    csv_file = File.open(csv_file_path, "r:utf-8")
     csv = CSV.parse(csv_file, :headers => true)
-
+    a=0
     csv.each do |csv_row|
+      a+=1
       formatted_csv_row = {
         course_parent: csv_row['course_parent'].to_s.strip,
         course_name: csv_row['course_name'].to_s.strip,
@@ -88,6 +89,9 @@ class Api::V1::SubjectsController < Api::ApiController
 
       # ignore invalid row
       next if !is_valid_row?(formatted_csv_row)
+      p " **** "
+      p "---- PROCESSING ROW ---- "+a.to_s
+      p " **** "
 
       ActiveRecord::Base.transaction do
         course = Course.find_by(name: formatted_csv_row[:course_name])
@@ -120,25 +124,25 @@ class Api::V1::SubjectsController < Api::ApiController
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_a],
-          is_correct: formatted_csv_row[:correct_option] == '1'
+          is_correct: formatted_csv_row[:correct_option] == '1' || formatted_csv_row[:correct_option] == 'a'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_b],
-          is_correct: formatted_csv_row[:correct_option] == '2'
+          is_correct: formatted_csv_row[:correct_option] == '2' || formatted_csv_row[:correct_option] == 'b'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_c],
-          is_correct: formatted_csv_row[:correct_option] == '3'
+          is_correct: formatted_csv_row[:correct_option] == '3' || formatted_csv_row[:correct_option] == 'c'
         }
 
         answer_option_params << {
           question_id: question.id,
           description: formatted_csv_row[:option_d],
-          is_correct: formatted_csv_row[:correct_option] == '4'
+          is_correct: formatted_csv_row[:correct_option] == '4' || formatted_csv_row[:correct_option] == 'd'
         }
 
         AnswerOption.create(answer_option_params)

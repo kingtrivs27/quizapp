@@ -11,6 +11,7 @@
 
 class Course < ActiveRecord::Base
   has_many :subject_parents
-  enum course_parent: {ca_cpt: 1, cs_foundation: 2}
+  enum course_parent: {ca_cpt: 1}
+  # enum course_parent: {ca_cpt: 1, cs_foundation: 2}
 
 end
