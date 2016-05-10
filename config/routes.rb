@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   match '/v1/register_user' => 'api/v1/users#register', :via => 'post'
   match '/v1/get_user' => 'api/v1/users#get_user', :via => 'post'
 
+  match '/v1/request_call' => 'api/v1/users#request_call', :via => 'post'
+
   match '/v1/get_subjects' => 'api/v1/subjects#get_subjects', :via => 'post'
   # doing this for now till v2 is really needed
   match '/v2/get_subjects' => 'api/v1/subjects#get_subjects_v2', :via => 'post'

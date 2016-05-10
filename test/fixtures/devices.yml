@@ -10,6 +10,7 @@
 #  serial_number  :string(255)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  appversion     :string(255)
 #
 # Indexes
 #

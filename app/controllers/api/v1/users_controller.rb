@@ -44,6 +44,18 @@ class Api::V1::UsersController < Api::ApiController
     render json: response.to_json
   end
 
+  def request_call
+    user = @current_user
+    user.update_attributes(phone: params[:mobile_no], call_request_at: Time.now)
+
+    render json: get_v1_formatted_response({}, true, ['We will contact you shortly.']).to_json
+
+  rescue Exception => e
+    #todo use exception notifier for emailing the admins
+
+    log_errors(e)
+    render json: get_v1_formatted_response({}, false, ['Failed to register your request.']).to_json
+  end
 
   def update_device_info
     update_successful = true
@@ -110,7 +122,8 @@ class Api::V1::UsersController < Api::ApiController
       user_device_id: params[:device_info][:device_id],
       google_api_key: params[:device_info][:gcm_key],
       android_id: params[:device_info][:osversion],
-      serial_number: params[:device_info][:imei]
+      serial_number: params[:device_info][:imei],
+      appversion: params[:device_info][:appversion]
     }
   end
 

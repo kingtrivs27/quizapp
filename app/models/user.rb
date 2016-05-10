@@ -17,6 +17,7 @@
 #  total_quiz_played :integer          default(0), not null
 #  won               :integer          default(0), not null
 #  lost              :integer          default(0), not null
+#  call_request_at   :datetime
 #
 # Indexes
 #
