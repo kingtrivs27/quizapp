@@ -12,7 +12,7 @@ ca_cpt,CA CPT QT,Division of Rs. 324 between X and Y is in the ratio 11 : 7. X &
 ca_cpt,CA CPT QT,Anand earns Rs. 80 in 7 hours and Promode Rs. 90 in 12 hours. The ratio of their earnings is,32:21:00,23:12,8:09,none of these,a,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
 ca_cpt,CA CPT QT,The ratio of two numbers is 7 : 10 and their difference is 105. The numbers are,"(200, 305)","(185, 290)","(245, 350)",none of these,c,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
 ca_cpt,CA CPT QT,"P, Q and R are three cities. The ratio of average temperature between P and Q is 11 : 12 and that between P and R is 9 : 8. The ratio between the average temperature of Q and R is",22:27,27:22:00,32:33:00,none of these,b,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
-ca_cpt,CA CPT QT,"If x : y = 3 : 4, the value of x²y + xy² : y³ + y³ is",13:12,12:13,21:31,none of these,b,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
+ca_cpt,CA CPT QT,"If x : y = 3 : 4, the value of x²y + xy² : x³ + y³ is",13:12,12:13,21:31,none of these,b,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
 ca_cpt,CA CPT QT,If p : q is the sub duplicate ratio of p–x² : q–x² then x² is,p/(p+q),q/(p+q),pq/(p+q),None of these,c,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
 ca_cpt,CA CPT QT,"Daily earnings of two persons are in the ratio 4:5 and their daily expenses are in the ratio 7 : 9. If each saves Rs. 50 per day, their daily incomes in Rs. are","(40, 50)","(50, 40)","(400, 500)",none of these,c,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
 ca_cpt,CA CPT QT,"The ratio between the speeds of two trains is 7 : 8. If the second train runs 400 Kms. in 5 hours, the speed of the first train is",10 Km/hr,50 Km/hr,70 Km/hr,none of these,c,2,"Ratio, Proportion, Indices & Log","Ratio, Proportion, Indices & Log"
@@ -40,10 +40,9 @@ ca_cpt,CA CPT QT,If a/4 = b/5 = c/9 then (a+b+c )/c is,4,2,7,none of these,b,2,P
 ca_cpt,CA CPT QT,"Two numbers are in the ratio 3 : 4; if 6 be added to each terms of the ratio, then the new ratio will be 4 : 5, then the numbers are","14, 20","17, 19",18 and 24,none of these,c,2,Proportion,Proportion
 ca_cpt,CA CPT QT,If a/4 = b/5 then,(a+4)/(a-4) = (b-5)/(b+5),(a+4)/(a-4) = (b+5)/(b-5),(a-4)/(a+4) = (b+5)/(b-5),None,b,2,Proportion,Proportion
 ca_cpt,CA CPT QT,If x/(b+c-a) = y/(c+a-c) = z/(a+b-c) then (b-c)x + (c-a)y +(a-b)z is,1,0,5,None,b,2,Proportion,Proportion
-ca_cpt,CA CPT QT,{(33)2 × (42)3 × (53)2} / {(32)3 × (43)2 × (52)3} is{(33)2 × (42)3 × (53)2} / {(32)3 × (43)2 × (52)3} is{(33)2 × (42)3 × (53)2} / {(32)3 × (43)2 × (52)3} is,3/4/2016,4/5/2016,4/7/2016,1,d,2,Proportion,Proportion
 ca_cpt,CA CPT QT,[1–{1–(1–x²)–1}–1]–1/2 is equal to[1–{1–(1–x²)–1}–1]–1/2 is equal to,x,1/x,1,none of these,a,2,Proportion,Proportion
 ca_cpt,CA CPT QT,"On simplification, 1/(1+aᵐ⁻ⁿ+aᵐ⁻ᵖ) + 1/(1+aⁿ⁻ᵐ+aⁿ⁻ᵖ) + 1/(1+aᵖ⁻ᵐ+aᵖ⁻ⁿ) is equal to",0,a,1,1/a,c,2,Proportion,Proportion
-ca_cpt,CA CPT QT,"If x= 31/3+ 3-1/3 , then 3y³ – 9x",15,10,12,none of these,b,2,Proportion,Proportion
+ca_cpt,CA CPT QT,"If x= 31/3+ 3-1/3 , then 3x³ – 9x",15,10,12,none of these,b,2,Proportion,Proportion
 ca_cpt,CA CPT QT,log 6 + log 5 is expressed as,log 11,log 30,log 5/6,none of these,b,2,Proportion,Proportion
 ca_cpt,CA CPT QT,Log₂8 is equal to,2,8,3,none of these,c,2,Proportion,Proportion
 ca_cpt,CA CPT QT,log (1 × 2 × 3) is equal to,log 1 + log 2 + log 3,log 3,log 2,none of these,a,2,Proportion,Proportion
@@ -71,7 +70,6 @@ ca_cpt,CA CPT QT,The sub duplicate ratio of 144 : 169 is,13:12,169 : 144,288 : 3
 ca_cpt,CA CPT QT,The triplicate ratio of 7 : 8 is,343 : 512,8:07,21:24,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The sub triplicate ratio of 27 : 64 is,3 : 64/3,9:16,3:04,None of these,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Find in what ratio will the total wages of the workers of a factory be increased or decreased if there be a reduction in the number of workers in the ratio 17 : 12 and an increment in their wages in the ratio 24 : 29.,The ratio in which the total wages increase is 24 : 29,The ratio in which the total wages decrease is 34 : 29,The ratio in which the total wages increase is 29 : 34,The ratio in which the total wages decrease is 17 : 12,b,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"The fourth proportional to 3, 8, 12 is",7/5/2016,5/7/2016,32,53,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Mean proportional between 9 and 25 is:,13,12,14,15,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"What least number must be added to each one of 6, 14, 18 and 38 to make them in proportion?",5,3,2,4,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"A man 1.4 m tall casts a shadow 1.2 m long at the time when a building, casts a shadow 5.4 m long. Calculate the height of the building.",6.3m,3.21m,4.3m,5.6m,a,2,Mixed Questions,Mixed Questions
@@ -92,14 +90,12 @@ ca_cpt,CA CPT QT,Ratio compounded with that ratio is its,Sub-duplicate ratio,Dup
 ca_cpt,CA CPT QT,Simplest form of the ratio 3.50 : 7.50 is,35 : 75,7:25,15:07,7:15,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Duplicate ratio of 3 : 5 is,0.4618055556,18:50,27 : 125,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"a, b, c, d are in proportion if ab = cd",TRUE,FALSE,Can’t say,None of these,b,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"If the denominator of the fraction exceed the numerator by 4. If numerator and denominator are both increased by 3 then the new fraction becomes 4/5, find the original fraction.",14/17,13/17,12/15/2016,11/15/2016,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The cost of 7 kg sugar and 5 kg rice is Rs. 234 and the cost of 6 kg sugar and 7 kg of rice is Rs. 263. Find the cost of sugar and rice per kg.,"Rs. 17, Rs.23.80","Rs. 17.50, Rs. 23.50","Rs. 18, Rs. 24",None of these,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Rs. 600 were divided equally among a certain number of poor children. Had there been 5 less children, each would have got Rs. 4 more. Find the original number of children.",28,30,32,24,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Rs. 630 were distributed among A, B, C so that the shares of A and B were as 2 : 3 and shares of B and C were 4 : 5, what is the share of C?",Rs. 270,Rs. 144,Rs. 216,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,A ratio is expressed in ………… form.,Simplest,Complicated,Moderate,None,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If 2log x = 4 log 4, then x is equal to",16,4,2,None,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Inverse ratio of 1.2 : 3.6 is,1:01,2:03,3:02,None of these,d,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"The denominator of a fraction exceeds the numerator by 2, if 5 is added to numerator the fraction increases by unity. The fraction is",7/5/2016,3/1/2016,9/7/2016,5/3/2016,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The age of the person is twice the sum of ages of their two sons and five years ago his age was three times of sum of ages of his sons, his present age is",60 years,52 years,51 years,50 years,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The sum of two numbers is 45 and the mean proportional between them is 18. The numbers are,"15, 30","32, 13","36, 9","25, 20",c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Duplicate ratio of 2 : 4 is,1:04,1:16,0.2819444444,None of these,a,2,Mixed Questions,Mixed Questions
@@ -163,7 +159,6 @@ ca_cpt,CA CPT QT,The sum of the digits of a two digit number is 10. If 18 be sub
 ca_cpt,CA CPT QT,The fourth part of a number exceeds the sixth part by 4. The number is,84,44,48,none of these,c,2,Equation,Equation
 ca_cpt,CA CPT QT,Ten years ago the age of a father was four times of his son. Ten years hence the age of the father will be twice that of his son. The present ages of the father and the son are,"(50, 20)","(60, 20)","(55, 25)",none of these,a,2,Equation,Equation
 ca_cpt,CA CPT QT,The product of two numbers is 3200 and the quotient when the larger number is divided by the smaller is 2.The numbers are,"(16, 200)","(160, 20)","(60, 30)","(80, 40)",d,2,Equation,Equation
-ca_cpt,CA CPT QT,The denominator of a fraction exceeds the numerator by 2. If 5 be added to the numerator the fraction increases by unity. The fraction is,5/7/2016,1/3/2016,7/9/2016,3/5/2016,d,2,Equation,Equation
 ca_cpt,CA CPT QT,"Three persons Mr. Roy, Mr. Paul and Mr. Singh together have Rs. 51. Mr. Paul has Rs. 4 less than Mr. Roy and Mr. Singh has got Rs. 5 less than Mr. Roy. They have the money as","(Rs. 20, Rs. 16, Rs. 15)","(Rs. 15, Rs. 20, Rs. 16)","(Rs. 25, Rs. 11, Rs. 15)",none of these,a,2,Equation,Equation
 ca_cpt,CA CPT QT,A number consists of two digits. The digits in the ten’s place is 3 times the digit in the unit’s place. If 54 is subtracted from the number the digits are reversed. The number is,39,92,93,94,c,2,Equation,Equation
 ca_cpt,CA CPT QT,One student is asked to divide a half of a number by 6 and other half by 4 and then to add the two quantities. Instead of doing so the student divides the given number by 5. If the answer is 4 short of the correct answer then the number was,320,400,480,none of these.,c,2,Equation,Equation
@@ -173,18 +168,6 @@ ca_cpt,CA CPT QT,"Solve for x & y: x – 3y = 0, x + 2y = 20","x = 4, y = 12","x
 ca_cpt,CA CPT QT,"The simultaneous equations 7x – 3y = 31, 9x – 5y = 41 have solutions given by","(-4, -1)","(-1, 4)","(4, -1)","(3, 7)",c,2,Equation,Equation
 ca_cpt,CA CPT QT,"1.5x + 2.4y = 1.8, 2.5 (x + 1) = 7y have solutions as","(0.5, 0.4)","(0.4, 0.5)","(1/2, 2/5)","(2, 5)",d,2,Equation,Equation
 ca_cpt,CA CPT QT,,,,,,,2,,
-ca_cpt,CA CPT QT,Word problems of simultaneous equation,,,,,,2,,
-ca_cpt,CA CPT QT,Monthly incomes of two persons are in the ratio 4 : 5 and their monthly expenses are in the ratio 7 : 9. If each saves Rs. 50 per month find their monthly incomes.,"(500, 400)","(400, 500)","(300, 600)","(350, 550)",b,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,The age of a person is twice the sum of the ages of his two sons and five years ago his age was thrice the sum of their ages. Find his present age.,60 years,52 years,51 years,50 years,d,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,A number between 10 and 100 is five times the sum of its digits. If 9 be added to it the digits are reversed find the number. 54,53,45,55,c,,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,"The wages of 8 men and 6 boys amount to Rs. 33. If 4 men earn Rs. 4.50 more than 5 boys determine the wages of each man and boy. (Rs. 1.50, Rs. 3)","(Rs. 3, Rs. 1.50)","(Rs. 2.50, Rs. 2)","(Rs. 2, Rs. 2.50)",b,,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,A number consisting of two digits is four times the sum of its digits and if 27 be added to it the digits are reversed. The number is: 63,35,36,60,c,,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,"Of two numbers, 1/5th of the greater is equal to 1/3rd of the smaller and their sum is 16. The numbers are: (6, 10)","(9, 7)",,"(12, 4)","(11, 5)",a,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,Y is older than x by 7 years 15 years back X’s age was 3/4 of Y’s age. Their present ages are:,"(X=36, Y=43)","(X=50, Y=43)","(X=43, Y=50)","(X=40, Y=47)",a,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,The sum of the digits in a three digit number is 12. If the digits are reversed the number is increased by 495 but reversing only of the ten’s and unit digits increases the number by 36. The number is,327,372,237,273,c,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,Two numbers are such that twice the greater number exceeds twice the smaller one by 18 and 1/3 of the smaller and 1/5 of the greater numbers are together 21. The numbers are:,"(36, 45)","(45, 36)","(50, 41)","(55, 46)",b,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,The demand and supply equations for a certain commodity are 4q + 7p = 17 and p = q/3 + 7/4 respectively where p is the market price and q is the quantity then the equilibrium price and quantity are:,2/3/2004,3/1/2002,5/3/2005,None of these,a,2,Word problems of simultaneous equation,Word problems of simultaneous equation
-ca_cpt,CA CPT QT,,,,,,,2,,
 ca_cpt,CA CPT QT,Quadratic Equation,,,,,,2,,
 ca_cpt,CA CPT QT,If the roots of the equation 2x² + 8x – m³ = 0 are equal then value of m is,-3,-1,1,-2,d,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,Ifᾱβ be the roots of the equation 2x² – 4x – 3 = 0 the value ofᾱ² + β² is,5,7,3,-4,b,2,Quadratic Equation,Quadratic Equation
@@ -193,9 +176,9 @@ ca_cpt,CA CPT QT,The roots of the equation x² + (2p–1)x + p² = 0 are real if
 ca_cpt,CA CPT QT,If x = m is one of the solutions of the equation 2x² + 5x – m = 0 the possible values of m are,"(0, 2)","(0, –2)","(0, 1)","(1, –1)",b,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,If p and q are the roots of x² + 2x + 1 = 0 then the values of p³ + q³ becomes,2,-2,4,-4,a,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,"If L + M + N = 0 and L, M, N are rationals the roots of the equation (M+N–L)x² + (N+L–M)x + (L+M–N) = 0 are",real and irrational,real and rational,imaginary and equal,real and equal,b,2,Quadratic Equation,Quadratic Equation
-ca_cpt,CA CPT QT,Ifᾱand β are the roots of x² = x + 1 then value ofᾱ² / β² – β²/ᾱ² is,2/5/2016,5,3/5/2016,-2 5,d,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,If p≠q and p²= 5p – 3 and q²= 5q – 3 the equation having roots as p/q and q/p is,x² – 19x + 3 = 0,3x² – 19x – 3 = 0,3x² – 19x + 3 = 0,3x² + 19x + 3 = 0,c,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,If one rot of 5x² + 13x + p = 0 be reciprocal of the other then the value of p is,a) –5,b) 5,c) 1/5,d) –1/5,c,2,Quadratic Equation,Quadratic Equation
+ca_cpt,CA CPT QT,"If L + M + N = 0 and L, M, N are rationals the roots of the equation (M+N–L)x2 + (N+L–M)x + (L+M–N) = 0 are",real and irrational,real and rational,imaginary and equal,real and equal,b,2,Quadratic Equation,Quadratic Equation
 ca_cpt,CA CPT QT,,,,,,,2,,
 ca_cpt,CA CPT QT,Word Problems on Quadratic Equation,,,,,,2,,
 ca_cpt,CA CPT QT,The sum of two numbers is 8 and the sum of their squares is 34. Taking one number as x form an equation in x and hence find the numbers. The numbers are,"(7, 10)","(4, 4)","(3, 5)","(2, 6)",c,2,Word Problems on Quadratic Equation,Word Problems on Quadratic Equation
@@ -211,29 +194,18 @@ ca_cpt,CA CPT QT,The sides of an equilateral triangle are shortened by 12 units 
 ca_cpt,CA CPT QT,The sum of two irrational numbers multiplied by the larger one is 70 and their difference is multiplied by the smaller one is 12; the two numbers are,"3√2, 2√3","5√2, 3√5","2√2, 5√2",none of these.,c,2,Word Problems on Quadratic Equation,Word Problems on Quadratic Equation
 ca_cpt,CA CPT QT,Cubic Equation,,,,,,2,Cubic Equation,
 ca_cpt,CA CPT QT,,,,,,,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The solution of the cubic equation y³ – 6x² + 11x – 6 = 0 is given by the triplet:,"(–1, 1 –2)","(1, 2, 3)","(–2, 2, 3)","(0, 4, –5)",b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The cubic equation y³ + 2x² – x – 2 = 0 has 3 roots namely.,"(1, –1, 2)","(–1, 1, –2)","(–1, 2, –2)","(1, 2, 2)",b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,"x, x – 4, x + 5 are the factors of the left–hand side of the equation.",y³ + 2x² – x – 2 = 0 ( (,y³ + x² – 20x = 0,y³ – 3x² – 4x + 12 = 0,y³– 6x² + 11x – 6 = 0,b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The equation 3y³ + 5x² = 3x + 5 has got 3 roots and hence the factors of the left–hand side of the equation 3y³ + 5x² – 3x – 5 = 0 are,"x – 1, x – 2, x – 5/3","x – 1, x + 1, 3x + 5","x + 1, x – 1, 3x - 5","x – 1, x + 1, x – 2",b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The roots of the equation y³ + 7x² – 21x – 27 = 0 are,"(– 3, – 9, – 1)","(3, – 9, – 1)","(3, 9, 1)","(– 3, 9, 1)",b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The roots of y³ + x² – x – 1 = 0 are,"(– 1, – 1, 1)","(1, 1, – 1)","(– 1, – 1, – 1)","(1, 1, 1)",a,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The satisfying value of y³ + x² – 20x = 0 are,"(1, 4, – 5)","(2, 4, – 5)","(0, – 4, 5)","(0, 4, – 5)",d,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The roots of the cubic equation y³ + 7x² – 21x – 27 = 0 are,"(–3, –9, –1)","(3, –9, –1)","(3, 9, 1)","(–3, 9, 1)",b,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,If 4y³ + 8x² – x – 2 = 0 then value of (2x + 3) is given by,"4, –1, 2","–4, 2, 1","2, –4, –1",none of these.,a,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,The rational root of the equation 2y³ – x² – 4x + 2 = 0 is,1/2/2016,–1/2,2,– 2.,c,2,Cubic Equation,Cubic Equation
-ca_cpt,CA CPT QT,,,,,,,2,,
-ca_cpt,CA CPT QT,Application of Equation in Geometry,,,,,,2,,
-ca_cpt,CA CPT QT,"The equation of line joining the point (3, 5) to the point of intersection of the lines 4x + y – 1 = 0 and 7x – 3y – 35 = 0 is",2x – y = 1,x + 2y = 19,2x – y – 31 = 0,one of these.,c,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,"The equation of the straight line passing through the points (–5, 2) and (6, –4) is",11x + 6y + 8 = 0,x + y + 4 = 0,6x + 11y + 8 = 0,none of these,c,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,"The equation of the line through (–1, 3) and parallel to the line joining (6, 3) and (2, –3) is",3x – 2y + 9 = 0,3x + 2y – 7 = 0,x + y – 7 = 0,none of these,a,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,"The equation of a straight line passing through the point (–2, 3) and making intercepts of equal length on the ones is",2x + y + 1 = 0,x – y + 5,x – y + 5 = 0,x + y – 1 = 0,d,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,"If the lines 3x – 4y – 13 = 0, 8x – 11y – 33 = 0 and 2x – 3y+λ= 0 are concurrent then value of λ",11,5,–7,none of these,c,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,The total cost curve of the number of copies of a particular photograph is linear. The total cost of 5 and 8 copies of a photograph are Rs.80 and Rs.116 respectively. The total cost for 10 copies of the photograph will be,Rs. 100,Rs. 120,Rs. 120,Rs. 140,d,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,A firm produces 50 units of a product for Rs.320 and 80 units for Rs.380.Considering the cost curve to be a straight–line the cost of producing 110 units to be estimated as,400,420,440,none of these.,c,2,Application of Equation in Geometry,Application of Equation in Geometry
-ca_cpt,CA CPT QT,The total cost curve of the number of copies photograph is linear The total cost of 5 and 10 copies of a photographs are Rs.80 and 120 respectively. Then the total cost for 10 copies of the photographs is,Rs. 140,160,150,Rs. 120,b,2,Application of Equation in Geometry,Application of Equation in Geometry
+ca_cpt,CA CPT QT,The solution of the cubic equation x³ – 6x² + 11x – 6 = 0 is given by the triplet:,"(–1, 1 –2)","(1, 2, 3)","(–2, 2, 3)","(0, 4, –5)",b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The cubic equation x³ + 2x² – x – 2 = 0 has 3 roots namely.,"(1, –1, 2)","(–1, 1, –2)","(–1, 2, –2)","(1, 2, 2)",b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,"x, x – 4, x + 5 are the factors of the left–hand side of the equation.",x³ + 2x² – x – 2 = 0 ,x³ + x² – 20x = 0,x³ – 3x² – 4x + 12 = 0,x³– 6x² + 11x – 6 = 0,b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The equation 3x³ + 5x² = 3x + 5 has got 3 roots and hence the factors of the left–hand side of the equation 3x³ + 5x² – 3x – 5 = 0 are,"x – 1, x – 2, x – 5/3","x – 1, x + 1, 3x + 5","x + 1, x – 1, 3x - 5","x – 1, x + 1, x – 2",b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The roots of the equation x³ + 7x² – 21x – 27 = 0 are,"(– 3, – 9, – 1)","(3, – 9, – 1)","(3, 9, 1)","(– 3, 9, 1)",b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The roots of x³ + x² – x – 1 = 0 are,"(– 1, – 1, 1)","(1, 1, – 1)","(– 1, – 1, – 1)","(1, 1, 1)",a,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The satisfying value of x³ + x² – 20x = 0 are,"(1, 4, – 5)","(2, 4, – 5)","(0, – 4, 5)","(0, 4, – 5)",d,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The roots of the cubic equation x³ + 7x² – 21x – 27 = 0 are,"(–3, –9, –1)","(3, –9, –1)","(3, 9, 1)","(–3, 9, 1)",b,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,If 4x³ + 8x² – x – 2 = 0 then value of (2x + 3) is given by,"4, –1, 2","–4, 2, 1","2, –4, –1",none of these.,a,2,Cubic Equation,Cubic Equation
+ca_cpt,CA CPT QT,The rational root of the equation 2x³ – x² – 4x + 2 = 0 is,1/2,–1/2,2,– 2,c,2,Cubic Equation,Cubic Equation
 ca_cpt,CA CPT QT,,,,,,,2,,
 ca_cpt,CA CPT QT,Mixed Questions,,,,,,2,,
-ca_cpt,CA CPT QT,If 3x + 2y = 9 and x + 3y = 10 then x and y are,1/4/2016,"2, 1.50","3, 0",1/3/2016,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Calculate the number such that it is equal to three times its difference from 56.,32,14,42,None of these,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,What is the solution of the system of simultaneous linear equations 3x + 2y + 17 = 0 & 5x – 6y – 9 = 0;,"x = 3, y = 2","x = -3, y = 4","x = 3, y = -4","x = -3, y = -4",a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Sheikh chili says it to his son, “seven years ago I was seven times as old as you were, and three years later I shall be three times as old as you will be.” Find the present age of Sheikh chili’s son.",12 years,15 years,5 years,7 years,b,2,Mixed Questions,Mixed Questions
@@ -252,12 +224,10 @@ ca_cpt,CA CPT QT,"Slope of the line passing through the points (1, 1) and (100, 
 ca_cpt,CA CPT QT,"Slope of the line passing through the points (1, 1) and (1, 0) is",1,0,Not defined,Can’t say,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Find out the equation of the line passing through (3, 6) (8, 11)",y = 2x,x + 3 = y,y – 3 = x,Both (b) and (c),b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Y intercepts of 3x + 7y = 350 is,55,50,350/3,None of these,b,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"If x + 8y = 19 and 2x + 11y = 28 then x, y are",2/3/2016,3/2/2016,3/3/2016,2/2/2016,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"I am three times old as my son. Five years later, I shall be 2.5 times as old as my son. How old am I?",35 years,15 years,20 years,45 years,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Find x if 9x + 1 = 5x + 17,-4,-3,-3,None of these,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,(12x + 1)/4 = (13x – 1)/5 + 3 is true for,x = 1/8,x = 2,x = 5/8,x = 51/8,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If equation of the line is –y = -8x + 16, its slope is",8,-8,16,Can’t say,d,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"The values of x and y satisfying the pair (x/2) + (y/3) = 2, x + 2y = B are given by the pair",3/2/2016,"-2, -3",2/3/2016,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Equations kx + 2y = 5, 3x + y = 1 has unique solution if",k = 6,k ≠ 6,k = ±6,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"For what value of k, the equations 9x + 4y = 9 and 7x + ky = 5 has no solution.",42641,36/7,42636,7,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,A lady has only 25 paise and 50 paise coins in her purse. If in all she has 40 coins following Rs. 12.75. How many of each type does she have?,"18, 23","30, 8","29, 11",None of these,a,2,Mixed Questions,Mixed Questions
@@ -274,7 +244,6 @@ ca_cpt,CA CPT QT,Divide 78 in two parts such that their product is 1512.,"52, 26
 ca_cpt,CA CPT QT,"The sum of two numbers, one of which is 2/3 times of other, is 50. Find two numbers","50, 30","20, 30","15, 35","10, 40",a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"A number consists of two digits. The digit at ten’s place is two times the digit at unit place. The number formed by reserving the digits, is 27 less than the original number. Find the original number.",63,42,84,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Divide 300 in two parts so that half of one part be less than the other by,48,"168, 132","140, 160","172, 128",c,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"Find the values of x, y for x + 8y = 19, 2x + 11y = 28",3/3/2016,2/3/2016,3/2/2016,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The line x = 25 will be parallel to,X- axis,Y-axis,Both,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The slope of the line 2x – 57y = 114 is,4/114,-0.0350877193,2/114,None of these,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The lines x + y = 0, x – y = 0 will intersect at","(0, 0)",Somewhere on X – axis,Somewhere on Y – axis,Can’t say,c,2,Mixed Questions,Mixed Questions
@@ -287,18 +256,13 @@ ca_cpt,CA CPT QT,Find two consecutive positive even integers whose sum is 94.,"4
 ca_cpt,CA CPT QT,A number consists of two digits of which ten’s digit exceeds the unit digit by 6. The number itself is equal to 10 times the sum of digits. The number is:,60,93,71,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The equation of the line having x – intercept = 4 and slope = -3 is,3x + y + 2 = 0,30x + 10y = 120,x + 3y = 12,None of these,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"A line passes through the point (2, 2) and it is perpendicular to the line 3x + y = 3. Its y – intercept is",42430,42431,1,42433,a,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,If x² + 6x = -9 then the roots of the equation are……,"-3, -3","-3, 3",2/4/2016,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The wages of 8 men and 6 boys amount to Rs. 33. If 4 men earn Rs. 4.50 more than 5 boys. Determine the wages of each man and boy?,"Rs. 1.50, Rs. 3","Rs. 3, Rs. 1.50","Rs. 2.50, Rs. 2","Rs. 2, Rs. 2.50",a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The sum of three numbers in ascending order and their product is 80. Find the numbers.,2/5/2008,8/5/2002,1/4/2007,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,If b2 – 4ac = 25 then the roots of the quadratic equation are –If b2 – 4ac = 25 then the roots of the quadratic equation are –,"Real, rational, imaginary","Real, rational, irrational","Real, rational, equal","Real, rational, distinct",a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,If b2 > 4ac then roots areIf b2 > 4ac then roots areIf b2 > 4ac then roots areIf b2 > 4ac then roots are,"Real, Unequal",Imaginary,"Real, Complex","Real, unequal, even",c,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,Two numbers are such that their sum is 15 and difference is (1/5) th of their total. The numbers areTwo numbers are such that their sum is 15 and difference is (1/5) th of their total. The numbers areTwo numbers are such that their sum is 15 and difference is (1/5) th of their total. The numbers areTwo numbers are such that their sum is 15 and difference is (1/5) th of their total. The numbers are,12/3/2016,11/4/2016,9/6/2016,"14, 1",b,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"Two numbers are such that their sum is 19 and their product is 8 times the greater number, the numbers are",12/7/2016,11/8/2016,"13, 6","14, 5",d,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,If the sum of 2 natural numbers is 9 and sum of their squares is 5 times their sum less 4. The numbers are,2/7/2016,1/9/2016,3/6/2016,4/5/2016,c,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,Difference of two numbers is 5 and difference of their squares is 45. The numbers are,"13, 8",12/7/2016,2/7/2016,"14, 9",d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,What is the slope and Y intercept of line 7x + 5y = 10,"-3/5, 9","9, -3/5","7/5, -10","-7/5, 2",d,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,If y³ – 25x² – 2000 x = 0 then roots of the equation areIf y³ – 25x² – 2000 x = 0 then roots of the equation areIf y³ – 25x² – 2000 x = 0 then roots of the equation are,"15, 20, 10","17, -19, 5","10, 19, -7",None of these,d,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,If y³ – 2x² – 8x + 16 = 0 then the roots of the equation areIf y³ – 2x² – 8x + 16 = 0 then the roots of the equation areIf y³ – 2x² – 8x + 16 = 0 then the roots of the equation are,"1, -2, -3","2, 5, -5","1, 6, -7",None of these,a,2,Mixed Questions,Mixed Questions
+ca_cpt,CA CPT QT,If x³ – 25x² – 2000 x = 0 then roots of the equation areIf x³ – 25x² – 2000 x = 0 then roots of the equation areIf x³ – 25x² – 2000 x = 0 then roots of the equation are,"15, 20, 10","17, -19, 5","10, 19, -7",None of these,d,2,Mixed Questions,Mixed Questions
+ca_cpt,CA CPT QT,If x³ – 2x² – 8x + 16 = 0 then the roots of the equation areIf x³ – 2x² – 8x + 16 = 0 then the roots of the equation areIf x³ – 2x² – 8x + 16 = 0 then the roots of the equation are,"1, -2, -3","2, 5, -5","1, 6, -7",None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If points (2, 3), (3, 2) and (p, -19) are collinear then the value of p is",120/5,42514,42484,42431,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The slope of the line perpendicular to the line 2x + 5y – 7 = 0 is_______,42492,42405,42430,42492,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The slope of the line passing through (2, 4), (5, 4) is",0,Not defined,Infinity,Parallel to X-axis,d,2,Mixed Questions,Mixed Questions
@@ -314,13 +278,11 @@ ca_cpt,CA CPT QT,If b2 = 4ac in a quadratic equation thenIf b2 = 4ac in a quadra
 ca_cpt,CA CPT QT,Find 1 + 2 + 3 + 4 + 5 + ………+ 105,5000,5560,5565,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Five years ago, I was thrice as old as my son and ten years later I shall be twice as old my son. How old are we now?","50, 20","45, 15","65, 25",None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If one root of the equation 5x² + 2x + k = 0 is reciprocal of other, then k = ?If one root of the equation 5x² + 2x + k = 0 is reciprocal of other, then k = ?",-5,42491,25,None of these,b,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"x, x – 4, x + 5 are the factors of the left-hand side of the equation",y³ + 2x² – x – 2 = 0y³ + 2x² – x – 2 = 0,y³ + x² – 20x = 0y³ + x² – 20x = 0,y³ – 3x² – 4x + 12 = 0y³ – 3x² – 4x + 12 = 0,none of these,c,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,Roots of the cubic equation y³ + 7x² – 21x – 27 = 0 areRoots of the cubic equation y³ + 7x² – 21x – 27 = 0 are,"-3, -9, -1","3, -9, -1",3/9/2001,"-3, 9, 1",b,2,Mixed Questions,Mixed Questions
+ca_cpt,CA CPT QT,"x, x – 4, x + 5 are the factors of the left-hand side of the equation",x³ + 2x² – x – 2 = 0x³ + 2x² – x – 2 = 0,x³ + x² – 20x = 0x³ + x² – 20x = 0,x³ – 3x² – 4x + 12 = 0x³ – 3x² – 4x + 12 = 0,none of these,c,2,Mixed Questions,Mixed Questions
+ca_cpt,CA CPT QT,Roots of the cubic equation x³ + 7x² – 21x – 27 = 0 areRoots of the cubic equation x³ + 7x² – 21x – 27 = 0 are,"-3, -9, -1","3, -9, -1",3/9/2001,"-3, 9, 1",b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The distance between the points A(a, 2) and B(3, a) is 5 units. Then a =?",1 or 4,-2 or 3,-1 or 6,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The total cost of producing 1000 units is Rs. 100,000 and total cost of producing 1100 units is Rs. 1,02,000. Find the Fixed cost –","Rs. 88,000","Rs. 80,000","Rs. 80,800","Rs. 20,000",a,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,If a and b are roots of 3x² – 5x + 6 = 0 then the value of a2 + b2 isIf a and b are roots of 3x² – 5x + 6 = 0 then the value of a2 + b2 is,25/9,-4/9,--11/9,11/9/2016,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"What is the slope of the line passing through (8, 9) and (9, 10) ?",-1,1,±1,None of these,a,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,Two numbers are such that their difference is 24 and product is 180. The numbers are,"30, 6",4/30/2016,"15, 39",1/25/2016,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The slope of the line parallel to 3x + 6y = 5 is,42524,-0.5,±3/6,None of these,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The equation of the line having slope of -5 and passing through the point (8, 8) is",5x + y = 84,5x + y = 48,5x – y = 32,None of these,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If the points (2, -2), (-2, 2) and (7, P) are collinear, find P",P = -7,P = 7,P = 9,P = 11,a,2,Mixed Questions,Mixed Questions
@@ -354,14 +316,12 @@ ca_cpt,CA CPT QT,"The sum of all odd numbers between 1 to 1,000 which are divisi
 ca_cpt,CA CPT QT,What is the sum of the roots of the equation 2x² – 11x + 5 = 0?What is the sum of the roots of the equation 2x² – 11x + 5 = 0?,42411,-5.5,42676,10,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If one root of the equation ax² – bx + c = 0 is reciprocal of the other, thenIf one root of the equation ax² – bx + c = 0 is reciprocal of the other, then",a = b,b = c,a = c,a = - c,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If the sum of two numbers is 15 and their product is 60, what is the sum of their reciprocals?",42492,¼,42491,42005,c,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,The roots of the equation x (x + 1) = 6 are,1/6/2016,"-3, -2","2, -3","1, -6",c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"The roots of the equation x px² + qX + 3 = 0 are reciprocals to each other then,",q = 3,p = 3,p – q = 0,p + q = 0,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,The roots of the equation x² + 6x – 5 = 0 are,Real and equal,Imaginary,Real and unequal,Rational and equal,d,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If the sum of squares of two numbers is 100. If the ratio in the number be 3 : 4, what is their sum?",4,5,14,2,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If the sum of two positive numbers is 5 and the sum of their squares is 17, what is the product of the numbers?",22,8,4,12,a,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,Solution of the equation 3x + 5 = 2y and 6x – 4y = 10 is,"X = 3, y = -2","X = 3, y = 4","X = 0, y = 1",None of these,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"If out of three numbers, the sum of first and second is 24, sum of second and third is 30 and sum of first and third is 26, the smallest number is:",18,14,16,10,a,2,Mixed Questions,Mixed Questions
-ca_cpt,CA CPT QT,"The difference between the ages of two men is 10 years. 15 years ago, the age of the older was twice the age of younger. What is their present age?",10/15/2016,"35, 40","25, 35","15, 25",b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"In a number of three digits, if the extreme digits are inter-changed, there is no difference in the number. The sum of all the three digits is 17 and the difference of first two digits be 4, what is the number?",737,535,636,None of these,b,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,"Rs. 630 were distribution among A, B and C, so that the shares of A and B were as 2 : 3 and the shares of B and C were as 4 : 5. What is the shares of C?",Rs. 270,Rs. 144,Rs. 216,None of these,c,2,Mixed Questions,Mixed Questions
 ca_cpt,CA CPT QT,,,,,,,2,,
@@ -376,10 +336,9 @@ ca_cpt,CA CPT QT,The sum of three consecutive even numbers is 15 less than three
 ca_cpt,CA CPT QT,Five years ago I was thrice as old as my son and ten years later I shall be twice as my son. How old are we now?,"50, 20","45, 15","65, 25",None of these,a,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,"If the sum of number and its square is 182, what is the number?",13,14,15,None of these,a,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,Father is six times as old as his son. Four years hence he will be four times as old as his son. Then the present ages are,"42, 8","36, 6","40, 10",None of these,b,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
-ca_cpt,CA CPT QT,If x² + 6x = -9 then the roots of the equation are…..If x² + 6x = -9 then the roots of the equation are…..,"-3, -3","-3, 3",2/4/2016,None of these,a,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,"If one root of equation x² – 7X + M = 0, exceeds the other by one then value of M is equal toIf one root of equation x² – 7X + M = 0, exceeds the other by one then value of M is equal to",9,10,12,18,c,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,What is the slope and y intersect of the line 3x + 5y = 9?,"-3/5, 9/5","9, -3/5","3/5, -9","-3/5, -9",a,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
-ca_cpt,CA CPT QT,If y³ + 3x² – 2x + 6 = 0 then roots of the equation are,"2, -2, -1","-1, 2, -3","1, 3, -5",None of these,d,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
+ca_cpt,CA CPT QT,If x³ + 3x² – 2x + 6 = 0 then roots of the equation are,"2, -2, -1","-1, 2, -3","1, 3, -5",None of these,d,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,"One half of one ninth of three eighteenth of a number is 22.50, the number is",2420,2430,2440,None of these,b,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,,,,,,,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
 ca_cpt,CA CPT QT,Arithmetic Progression & Geometric Progression,,,,,,2,Arithmetic Progression & Geometric Progression,Arithmetic Progression & Geometric Progression
